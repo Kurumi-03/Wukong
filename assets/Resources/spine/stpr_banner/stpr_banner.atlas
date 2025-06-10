@@ -1,0 +1,517 @@
+
+stpr_banner.png
+size: 1912,1720
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+SymWin_Back_00000
+  rotate: false
+  xy: 1308, 490
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+SymWin_Back_00002
+  rotate: false
+  xy: 1610, 490
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+SymWin_Back_00004
+  rotate: false
+  xy: 2, 304
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+SymWin_Back_00006
+  rotate: false
+  xy: 304, 304
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+SymWin_Back_00008
+  rotate: false
+  xy: 606, 258
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+SymWin_Back_00010
+  rotate: false
+  xy: 908, 232
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+SymWin_Back_00012
+  rotate: false
+  xy: 1210, 188
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+SymWin_Back_00014
+  rotate: false
+  xy: 1512, 188
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+SymWin_Back_00016
+  rotate: false
+  xy: 2, 2
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+SymWin_Back_00018
+  rotate: false
+  xy: 304, 2
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+bf_f_00008
+  rotate: false
+  xy: 828, 1488
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bf_f_00009
+  rotate: false
+  xy: 1090, 1488
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bf_f_00010
+  rotate: false
+  xy: 1352, 1488
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bf_f_00011
+  rotate: false
+  xy: 1614, 1488
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bf_f_00012
+  rotate: false
+  xy: 2, 1302
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bf_f_00013
+  rotate: false
+  xy: 2, 1302
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bf_f_00014
+  rotate: false
+  xy: 264, 1302
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bf_f_00015
+  rotate: false
+  xy: 526, 1302
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00000
+  rotate: false
+  xy: 788, 1256
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00001
+  rotate: false
+  xy: 1050, 1256
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00002
+  rotate: false
+  xy: 1312, 1256
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00003
+  rotate: false
+  xy: 1574, 1256
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00004
+  rotate: false
+  xy: 2, 1070
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00005
+  rotate: false
+  xy: 264, 1070
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00006
+  rotate: false
+  xy: 526, 1070
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00007
+  rotate: false
+  xy: 788, 1024
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00008
+  rotate: false
+  xy: 1050, 1024
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00009
+  rotate: false
+  xy: 1312, 1024
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00010
+  rotate: false
+  xy: 1574, 1024
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00011
+  rotate: false
+  xy: 2, 838
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00012
+  rotate: false
+  xy: 264, 838
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00013
+  rotate: false
+  xy: 526, 838
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00014
+  rotate: false
+  xy: 788, 792
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00015
+  rotate: false
+  xy: 1050, 792
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00016
+  rotate: false
+  xy: 1312, 792
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00017
+  rotate: false
+  xy: 1574, 792
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00018
+  rotate: false
+  xy: 2, 606
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00019
+  rotate: false
+  xy: 264, 606
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00020
+  rotate: false
+  xy: 526, 606
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bn_fire_00021
+  rotate: false
+  xy: 788, 560
+  size: 260, 230
+  orig: 260, 230
+  offset: 0, 0
+  index: -1
+bunner2
+  rotate: false
+  xy: 2, 1534
+  size: 824, 184
+  orig: 824, 184
+  offset: 0, 0
+  index: -1
+dh04
+  rotate: false
+  xy: 1050, 534
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+
+stpr_banner2.png
+size: 1746,1988
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+wk_sk03_00000
+  rotate: true
+  xy: 2, 1326
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00001
+  rotate: false
+  xy: 1084, 906
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00002
+  rotate: true
+  xy: 2, 664
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00003
+  rotate: true
+  xy: 2, 2
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+
+stpr_banner3.png
+size: 1746,1988
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+wk_sk03_00004
+  rotate: true
+  xy: 2, 1326
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00005
+  rotate: false
+  xy: 1084, 906
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00006
+  rotate: true
+  xy: 2, 664
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00007
+  rotate: true
+  xy: 2, 2
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+
+stpr_banner4.png
+size: 1746,1988
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+wk_sk03_00008
+  rotate: true
+  xy: 2, 1326
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00009
+  rotate: false
+  xy: 1084, 906
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00010
+  rotate: true
+  xy: 2, 664
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00011
+  rotate: true
+  xy: 2, 2
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+
+stpr_banner5.png
+size: 1746,1988
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+wk_sk03_00012
+  rotate: true
+  xy: 2, 1326
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00013
+  rotate: false
+  xy: 1084, 906
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00014
+  rotate: true
+  xy: 2, 664
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00015
+  rotate: true
+  xy: 2, 2
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+
+stpr_banner6.png
+size: 1746,1988
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+wk_sk03_00016
+  rotate: true
+  xy: 2, 1326
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00017
+  rotate: false
+  xy: 1084, 906
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00018
+  rotate: true
+  xy: 2, 664
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00019
+  rotate: true
+  xy: 2, 2
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+
+stpr_banner7.png
+size: 1746,1988
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+wk_sk03_00020
+  rotate: true
+  xy: 2, 1326
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00021
+  rotate: false
+  xy: 1084, 906
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00022
+  rotate: true
+  xy: 2, 664
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+wk_sk03_00023
+  rotate: true
+  xy: 2, 2
+  size: 660, 1080
+  orig: 660, 1080
+  offset: 0, 0
+  index: -1
+
+stpr_banner8.png
+size: 1499,718
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bunner1
+  rotate: false
+  xy: 2, 2
+  size: 1495, 714
+  orig: 1495, 714
+  offset: 0, 0
+  index: -1

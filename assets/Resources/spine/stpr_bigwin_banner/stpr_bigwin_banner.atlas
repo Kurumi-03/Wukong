@@ -1,0 +1,209 @@
+
+stpr_bigwin_banner.png
+size: 1975,1157
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+SymWin_Back_00000
+  rotate: false
+  xy: 1288, 230
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+WIN_bg
+  rotate: false
+  xy: 2, 516
+  size: 1157, 639
+  orig: 1157, 639
+  offset: 0, 0
+  index: -1
+clip_tree_shake_glow_1
+  rotate: false
+  xy: 535, 2
+  size: 350, 120
+  orig: 350, 120
+  offset: 0, 0
+  index: -1
+clip_tree_shake_glow_11
+  rotate: true
+  xy: 1283, 805
+  size: 350, 120
+  orig: 350, 120
+  offset: 0, 0
+  index: -1
+clip_tree_shake_glow_13
+  rotate: true
+  xy: 1405, 805
+  size: 350, 120
+  orig: 350, 120
+  offset: 0, 0
+  index: -1
+clip_tree_shake_glow_15
+  rotate: true
+  xy: 1166, 180
+  size: 350, 120
+  orig: 350, 120
+  offset: 0, 0
+  index: -1
+clip_tree_shake_glow_3
+  rotate: true
+  xy: 800, 164
+  size: 350, 120
+  orig: 350, 120
+  offset: 0, 0
+  index: -1
+clip_tree_shake_glow_5
+  rotate: true
+  xy: 922, 164
+  size: 350, 120
+  orig: 350, 120
+  offset: 0, 0
+  index: -1
+clip_tree_shake_glow_7
+  rotate: true
+  xy: 1044, 164
+  size: 350, 120
+  orig: 350, 120
+  offset: 0, 0
+  index: -1
+clip_tree_shake_glow_9
+  rotate: true
+  xy: 1161, 805
+  size: 350, 120
+  orig: 350, 120
+  offset: 0, 0
+  index: -1
+light_01
+  rotate: true
+  xy: 1389, 28
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_02
+  rotate: true
+  xy: 1581, 28
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_03
+  rotate: false
+  xy: 1773, 965
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_04
+  rotate: false
+  xy: 1773, 773
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_05
+  rotate: false
+  xy: 1773, 581
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_06
+  rotate: false
+  xy: 1773, 389
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_07
+  rotate: false
+  xy: 1773, 197
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_08
+  rotate: false
+  xy: 1773, 5
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_09
+  rotate: false
+  xy: 1527, 965
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_10
+  rotate: false
+  xy: 1527, 773
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+light_11
+  rotate: true
+  xy: 1472, 571
+  size: 200, 190
+  orig: 200, 190
+  offset: 0, 0
+  index: -1
+mega
+  rotate: true
+  xy: 2, 20
+  size: 494, 264
+  orig: 494, 264
+  offset: 0, 0
+  index: -1
+mega1
+  rotate: false
+  xy: 1590, 230
+  size: 154, 157
+  orig: 154, 157
+  offset: 0, 0
+  index: -1
+nice
+  rotate: false
+  xy: 1161, 532
+  size: 309, 271
+  orig: 309, 271
+  offset: 0, 0
+  index: -1
+nice1
+  rotate: false
+  xy: 1052, 4
+  size: 166, 158
+  orig: 166, 158
+  offset: 0, 0
+  index: -1
+sensational
+  rotate: true
+  xy: 268, 38
+  size: 476, 265
+  orig: 476, 265
+  offset: 0, 0
+  index: -1
+sensational1
+  rotate: false
+  xy: 887, 2
+  size: 163, 160
+  orig: 163, 160
+  offset: 0, 0
+  index: -1
+superb
+  rotate: true
+  xy: 535, 124
+  size: 390, 263
+  orig: 390, 263
+  offset: 0, 0
+  index: -1
+superb1
+  rotate: false
+  xy: 1220, 10
+  size: 167, 168
+  orig: 167, 168
+  offset: 0, 0
+  index: -1

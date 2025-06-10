@@ -1,0 +1,354 @@
+
+stpr_basegame_idle.png
+size: 2034,1945
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_eff02
+  rotate: true
+  xy: 2, 504
+  size: 423, 1080
+  orig: 423, 1080
+  offset: 0, 0
+  index: -1
+bg_smoke_01
+  rotate: false
+  xy: 1526, 681
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_03
+  rotate: false
+  xy: 1084, 179
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_05
+  rotate: false
+  xy: 2, 2
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_07
+  rotate: false
+  xy: 504, 2
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+particle_01
+  rotate: false
+  xy: 2, 1691
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_02
+  rotate: false
+  xy: 256, 1691
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_03
+  rotate: false
+  xy: 510, 1691
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_04
+  rotate: false
+  xy: 764, 1691
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_05
+  rotate: false
+  xy: 1018, 1691
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_06
+  rotate: false
+  xy: 1272, 1691
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_07
+  rotate: false
+  xy: 1526, 1691
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_08
+  rotate: false
+  xy: 1780, 1691
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_09
+  rotate: false
+  xy: 2, 1437
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_10
+  rotate: false
+  xy: 256, 1437
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_11
+  rotate: false
+  xy: 510, 1437
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_12
+  rotate: false
+  xy: 764, 1437
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_13
+  rotate: false
+  xy: 1018, 1437
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_14
+  rotate: false
+  xy: 1272, 1437
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_15
+  rotate: false
+  xy: 1526, 1437
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_16
+  rotate: false
+  xy: 1780, 1437
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_17
+  rotate: false
+  xy: 2, 1183
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_18
+  rotate: false
+  xy: 256, 1183
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_19
+  rotate: false
+  xy: 510, 1183
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_20
+  rotate: false
+  xy: 764, 1183
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_21
+  rotate: false
+  xy: 1018, 1183
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_22
+  rotate: false
+  xy: 1272, 1183
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_23
+  rotate: false
+  xy: 1526, 1183
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_24
+  rotate: false
+  xy: 1780, 1183
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_25
+  rotate: false
+  xy: 2, 929
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_26
+  rotate: false
+  xy: 256, 929
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_27
+  rotate: false
+  xy: 510, 929
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_28
+  rotate: false
+  xy: 764, 929
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_29
+  rotate: false
+  xy: 1018, 929
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+particle_30
+  rotate: false
+  xy: 1272, 929
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+
+stpr_basegame_idle2.png
+size: 2010,1508
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_smoke_09
+  rotate: false
+  xy: 2, 1006
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_11
+  rotate: false
+  xy: 504, 1006
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_13
+  rotate: false
+  xy: 1006, 1006
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_15
+  rotate: false
+  xy: 1508, 1006
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_17
+  rotate: false
+  xy: 2, 504
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_19
+  rotate: false
+  xy: 504, 504
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_21
+  rotate: false
+  xy: 1006, 504
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_23
+  rotate: false
+  xy: 1508, 504
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_25
+  rotate: false
+  xy: 2, 2
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_27
+  rotate: false
+  xy: 504, 2
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_29
+  rotate: false
+  xy: 1006, 2
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+bg_smoke_31
+  rotate: false
+  xy: 1508, 2
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+
+stpr_basegame_idle3.png
+size: 548,1084
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_eff01
+  rotate: false
+  xy: 2, 2
+  size: 544, 1080
+  orig: 544, 1080
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,125 @@
+
+jiazaitiao.png
+size: 1610,262
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jiazaitiao
+  rotate: false
+  xy: 0, 176
+  size: 1606, 40
+  orig: 1610, 44
+  offset: 2, 2
+  index: -1
+jiazaitiao_1
+  rotate: false
+  xy: 0, 218
+  size: 1610, 44
+  orig: 1610, 44
+  offset: 0, 0
+  index: -1
+jindu_g/jd_g000
+  rotate: false
+  xy: 792, 22
+  size: 736, 20
+  orig: 805, 22
+  offset: 23, 1
+  index: -1
+jindu_g/jd_g001
+  rotate: false
+  xy: 0, 44
+  size: 792, 20
+  orig: 805, 22
+  offset: 5, 1
+  index: -1
+jindu_g/jd_g002
+  rotate: false
+  xy: 797, 132
+  size: 794, 20
+  orig: 805, 22
+  offset: 4, 1
+  index: -1
+jindu_g/jd_g003
+  rotate: false
+  xy: 0, 154
+  size: 796, 20
+  orig: 805, 22
+  offset: 3, 1
+  index: -1
+jindu_g/jd_g004
+  rotate: false
+  xy: 0, 132
+  size: 795, 20
+  orig: 805, 22
+  offset: 4, 1
+  index: -1
+jindu_g/jd_g005
+  rotate: false
+  xy: 798, 154
+  size: 795, 20
+  orig: 805, 22
+  offset: 5, 1
+  index: -1
+jindu_g/jd_g006
+  rotate: false
+  xy: 0, 110
+  size: 795, 20
+  orig: 805, 22
+  offset: 6, 1
+  index: -1
+jindu_g/jd_g007
+  rotate: false
+  xy: 0, 0
+  size: 738, 20
+  orig: 805, 22
+  offset: 22, 1
+  index: -1
+jindu_g/jd_g008
+  rotate: false
+  xy: 0, 22
+  size: 790, 20
+  orig: 805, 22
+  offset: 6, 1
+  index: -1
+jindu_g/jd_g009
+  rotate: false
+  xy: 797, 110
+  size: 793, 20
+  orig: 805, 22
+  offset: 4, 1
+  index: -1
+jindu_g/jd_g010
+  rotate: false
+  xy: 0, 88
+  size: 794, 20
+  orig: 805, 22
+  offset: 4, 1
+  index: -1
+jindu_g/jd_g011
+  rotate: false
+  xy: 0, 66
+  size: 793, 20
+  orig: 805, 22
+  offset: 5, 1
+  index: -1
+jindu_g/jd_g012
+  rotate: false
+  xy: 795, 66
+  size: 792, 20
+  orig: 805, 22
+  offset: 6, 1
+  index: -1
+jindu_g/jd_g013
+  rotate: false
+  xy: 796, 88
+  size: 793, 20
+  orig: 805, 22
+  offset: 7, 1
+  index: -1
+jindu_g/jd_g014
+  rotate: false
+  xy: 794, 44
+  size: 785, 20
+  orig: 805, 22
+  offset: 17, 1
+  index: -1

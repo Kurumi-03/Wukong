@@ -1,0 +1,404 @@
+
+gool_summon_effect.png
+size: 1822,2042
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+P_light_00000
+  rotate: false
+  xy: 2, 1546
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00001
+  rotate: false
+  xy: 2, 1546
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00002
+  rotate: true
+  xy: 2, 1270
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00003
+  rotate: true
+  xy: 2, 1270
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00004
+  rotate: true
+  xy: 278, 1766
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00005
+  rotate: false
+  xy: 498, 1270
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00006
+  rotate: true
+  xy: 2, 994
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00007
+  rotate: true
+  xy: 498, 994
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00008
+  rotate: true
+  xy: 774, 1766
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00009
+  rotate: true
+  xy: 774, 1490
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00010
+  rotate: false
+  xy: 994, 994
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00011
+  rotate: false
+  xy: 1270, 1546
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00012
+  rotate: false
+  xy: 1270, 1050
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+P_light_00013
+  rotate: false
+  xy: 1270, 1050
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00000
+  rotate: true
+  xy: 2, 718
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00001
+  rotate: true
+  xy: 2, 718
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00002
+  rotate: false
+  xy: 498, 498
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00003
+  rotate: false
+  xy: 498, 498
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00004
+  rotate: false
+  xy: 2, 222
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00005
+  rotate: false
+  xy: 774, 498
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00006
+  rotate: true
+  xy: 1050, 278
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00007
+  rotate: true
+  xy: 278, 222
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00008
+  rotate: false
+  xy: 774, 2
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00009
+  rotate: true
+  xy: 1050, 2
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00010
+  rotate: false
+  xy: 1546, 1546
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00011
+  rotate: false
+  xy: 1546, 1050
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00012
+  rotate: false
+  xy: 1546, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+b_light_00013
+  rotate: false
+  xy: 1546, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00000
+  rotate: false
+  xy: 1546, 58
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00001
+  rotate: false
+  xy: 1546, 58
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00013
+  rotate: false
+  xy: 1270, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00012
+  rotate: false
+  xy: 1270, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+
+gool_summon_effect2.png
+size: 1986,1382
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+g_light_00002
+  rotate: true
+  xy: 2, 1106
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00003
+  rotate: true
+  xy: 2, 1106
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00004
+  rotate: true
+  xy: 498, 1106
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00005
+  rotate: true
+  xy: 994, 1106
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00006
+  rotate: true
+  xy: 1490, 1106
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00007
+  rotate: true
+  xy: 2, 830
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00008
+  rotate: true
+  xy: 498, 830
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00009
+  rotate: true
+  xy: 994, 830
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00010
+  rotate: true
+  xy: 1490, 830
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00011
+  rotate: true
+  xy: 2, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00012
+  rotate: true
+  xy: 498, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+g_light_00013
+  rotate: true
+  xy: 498, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00000
+  rotate: true
+  xy: 994, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00001
+  rotate: true
+  xy: 994, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00002
+  rotate: true
+  xy: 1490, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00003
+  rotate: true
+  xy: 1490, 554
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00004
+  rotate: true
+  xy: 2, 278
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00005
+  rotate: true
+  xy: 498, 278
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00006
+  rotate: true
+  xy: 994, 278
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00007
+  rotate: true
+  xy: 1490, 278
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00008
+  rotate: true
+  xy: 2, 2
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00009
+  rotate: true
+  xy: 498, 2
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00010
+  rotate: true
+  xy: 994, 2
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1
+r_light_00011
+  rotate: true
+  xy: 1490, 2
+  size: 274, 494
+  orig: 274, 494
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,68 @@
+{
+"skeleton": { "hash": "nLI7tWZ8B83Kgx7Lw/nqKSvh6Kk", "spine": "3.8.81", "x": -805, "y": -22, "width": 1611, "height": 44 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "jindu_g/jd_g000", "parent": "root", "scaleX": 2, "scaleY": 2 }
+],
+"slots": [
+	{ "name": "jiazaitiao_1", "bone": "root", "attachment": "jiazaitiao_1" },
+	{ "name": "jiazaitiao", "bone": "root", "attachment": "jiazaitiao" },
+	{ "name": "jindu_g/jd_g000", "bone": "jindu_g/jd_g000", "attachment": "jindu_g/jd_g014", "blend": "additive" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"jiazaitiao": {
+				"jiazaitiao": { "width": 1610, "height": 44 }
+			},
+			"jiazaitiao_1": {
+				"jiazaitiao_1": { "width": 1610, "height": 44 }
+			},
+			"jindu_g/jd_g000": {
+				"jindu_g/jd_g000": { "width": 805, "height": 22 },
+				"jindu_g/jd_g001": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g002": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g003": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g004": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g005": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g006": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g007": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g008": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g009": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g010": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g011": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g012": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g013": { "x": 0.5, "width": 805, "height": 22 },
+				"jindu_g/jd_g014": { "x": 0.5, "width": 805, "height": 22 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"jindu_g/jd_g000": {
+				"attachment": [
+					{ "name": "jindu_g/jd_g000" },
+					{ "time": 0.0667, "name": "jindu_g/jd_g001" },
+					{ "time": 0.1333, "name": "jindu_g/jd_g002" },
+					{ "time": 0.2, "name": "jindu_g/jd_g003" },
+					{ "time": 0.2667, "name": "jindu_g/jd_g004" },
+					{ "time": 0.3333, "name": "jindu_g/jd_g005" },
+					{ "time": 0.4, "name": "jindu_g/jd_g006" },
+					{ "time": 0.4667, "name": "jindu_g/jd_g007" },
+					{ "time": 0.5333, "name": "jindu_g/jd_g008" },
+					{ "time": 0.6, "name": "jindu_g/jd_g009" },
+					{ "time": 0.6667, "name": "jindu_g/jd_g010" },
+					{ "time": 0.7333, "name": "jindu_g/jd_g011" },
+					{ "time": 0.8, "name": "jindu_g/jd_g012" },
+					{ "time": 0.8667, "name": "jindu_g/jd_g013" },
+					{ "time": 0.9333, "name": "jindu_g/jd_g014" },
+					{ "time": 1, "name": "jindu_g/jd_g000" }
+				]
+			}
+		}
+	}
+}
+}
