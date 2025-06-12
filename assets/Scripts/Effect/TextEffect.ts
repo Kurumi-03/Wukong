@@ -1,5 +1,5 @@
 import { _decorator, Component, Label, Node, tween } from 'cc';
-import { Utils } from './Utils';
+import { Utils } from '../Use/Utils';
 const { ccclass, property } = _decorator;
 
 @ccclass('TextEffect')

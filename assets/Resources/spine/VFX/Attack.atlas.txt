@@ -1,0 +1,356 @@
+
+Attack.png
+size: 1031, 1031
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+image/Boom-Wukong-0
+  rotate: false
+  xy: 129, 129
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-1
+  rotate: false
+  xy: 0, 129
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-10
+  rotate: false
+  xy: 903, 258
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-11
+  rotate: false
+  xy: 774, 258
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-12
+  rotate: false
+  xy: 645, 258
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-13
+  rotate: false
+  xy: 516, 258
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-14
+  rotate: false
+  xy: 387, 258
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-15
+  rotate: false
+  xy: 258, 258
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-16
+  rotate: false
+  xy: 129, 258
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-17
+  rotate: false
+  xy: 0, 258
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-18
+  rotate: false
+  xy: 903, 387
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-19
+  rotate: false
+  xy: 774, 387
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-2
+  rotate: false
+  xy: 645, 387
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-20
+  rotate: false
+  xy: 516, 387
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-21
+  rotate: false
+  xy: 387, 387
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-22
+  rotate: false
+  xy: 258, 387
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-23
+  rotate: false
+  xy: 129, 387
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-24
+  rotate: false
+  xy: 0, 387
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-3
+  rotate: false
+  xy: 903, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-4
+  rotate: false
+  xy: 774, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-5
+  rotate: false
+  xy: 645, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-6
+  rotate: false
+  xy: 516, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-7
+  rotate: false
+  xy: 387, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-8
+  rotate: false
+  xy: 258, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Wukong-9
+  rotate: false
+  xy: 129, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-0
+  rotate: false
+  xy: 0, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-1
+  rotate: false
+  xy: 903, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-10
+  rotate: false
+  xy: 774, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-11
+  rotate: false
+  xy: 645, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-12
+  rotate: false
+  xy: 516, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-13
+  rotate: false
+  xy: 387, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-14
+  rotate: false
+  xy: 258, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-15
+  rotate: false
+  xy: 129, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-16
+  rotate: false
+  xy: 0, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-17
+  rotate: false
+  xy: 903, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-18
+  rotate: false
+  xy: 774, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-19
+  rotate: false
+  xy: 645, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-2
+  rotate: false
+  xy: 516, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-20
+  rotate: false
+  xy: 387, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-21
+  rotate: false
+  xy: 258, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-22
+  rotate: false
+  xy: 129, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-23
+  rotate: false
+  xy: 0, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-24
+  rotate: false
+  xy: 903, 903
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-3
+  rotate: false
+  xy: 774, 903
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-4
+  rotate: false
+  xy: 645, 903
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-5
+  rotate: false
+  xy: 516, 903
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-6
+  rotate: false
+  xy: 387, 903
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-7
+  rotate: false
+  xy: 258, 903
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-8
+  rotate: false
+  xy: 129, 903
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/Boom-Yangjian-9
+  rotate: false
+  xy: 0, 903
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

@@ -2,8 +2,6 @@ import {
     _decorator,
     Component,
     Label,
-    labelAssembler,
-    Node,
     Sprite,
     SpriteFrame
 } from 'cc';

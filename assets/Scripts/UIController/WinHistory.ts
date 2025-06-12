@@ -7,8 +7,8 @@ import {
     Prefab,
     ScrollView
 } from 'cc';
-import {WinItem} from './WinItem';
-import {ResourcesManager} from './ResourcesManager';
+import { WinItem } from '../Prefab/WinItem';
+import { ResourcesManager } from '../Manager/ResourcesManager';
 const {ccclass, property} = _decorator;
 
 @ccclass('WinHistory')

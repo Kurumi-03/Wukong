@@ -3,15 +3,13 @@ import {
     CCFloat,
     Component,
     Label,
-    labelAssembler,
     Node,
     Sprite,
     tween,
     UIOpacity
 } from 'cc';
-import {ResourcesManager} from './ResourcesManager';
-import {Utils} from './Utils';
-import {TextEffect} from './TextEffect';
+import { ResourcesManager } from '../Manager/ResourcesManager';
+import { TextEffect } from '../Effect/TextEffect';
 const {ccclass, property} = _decorator;
 
 @ccclass('BetTop')
@@ -89,5 +87,6 @@ export class BetTop extends Component {
     ShowMultiplier(multiplier : number) {
         this.multiplierLabel.node.active = true;
         this.multiplierLabel.string = "*" + multiplier;
+        this.lastMultiplier = multiplier;
     }
 }

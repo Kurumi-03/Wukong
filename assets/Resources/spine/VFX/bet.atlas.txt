@@ -1,0 +1,160 @@
+
+bet.png
+size: 1013, 1013
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+image/K1
+  rotate: false
+  xy: 645, 627
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K10
+  rotate: false
+  xy: 516, 627
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K11
+  rotate: false
+  xy: 387, 627
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K12
+  rotate: false
+  xy: 258, 627
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K13
+  rotate: false
+  xy: 129, 627
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K14
+  rotate: false
+  xy: 0, 627
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K15
+  rotate: false
+  xy: 774, 756
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K16
+  rotate: false
+  xy: 645, 756
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K17
+  rotate: false
+  xy: 516, 756
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K18
+  rotate: false
+  xy: 387, 756
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K19
+  rotate: false
+  xy: 258, 756
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K2
+  rotate: false
+  xy: 129, 756
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K20
+  rotate: false
+  xy: 0, 756
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K3
+  rotate: false
+  xy: 774, 885
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K4
+  rotate: false
+  xy: 645, 885
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K5
+  rotate: false
+  xy: 516, 885
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K6
+  rotate: false
+  xy: 387, 885
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K7
+  rotate: false
+  xy: 258, 885
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K8
+  rotate: false
+  xy: 129, 885
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/K9
+  rotate: false
+  xy: 0, 885
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/light
+  rotate: true
+  xy: 903, 895
+  size: 118, 110
+  orig: 128, 128
+  offset: 5, 10
+  index: -1
+image/spell
+  rotate: false
+  xy: 774, 631
+  size: 125, 124
+  orig: 128, 128
+  offset: 1, 2
+  index: -1

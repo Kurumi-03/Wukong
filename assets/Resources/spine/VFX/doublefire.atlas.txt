@@ -1,0 +1,153 @@
+
+doublefire.png
+size: 902, 902
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+image/FreeGame-BigScore-VFX-0
+  rotate: false
+  xy: 774, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-1
+  rotate: false
+  xy: 645, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-10
+  rotate: false
+  xy: 516, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-11
+  rotate: false
+  xy: 387, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-12
+  rotate: false
+  xy: 258, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-14
+  rotate: false
+  xy: 129, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-16
+  rotate: false
+  xy: 0, 516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-18
+  rotate: false
+  xy: 774, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-2
+  rotate: false
+  xy: 645, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-20
+  rotate: false
+  xy: 516, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-22
+  rotate: false
+  xy: 387, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-25
+  rotate: false
+  xy: 258, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-28
+  rotate: false
+  xy: 129, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-3
+  rotate: false
+  xy: 0, 645
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-31
+  rotate: false
+  xy: 774, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-37
+  rotate: false
+  xy: 645, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-4
+  rotate: false
+  xy: 516, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-5
+  rotate: false
+  xy: 387, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-6
+  rotate: false
+  xy: 258, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-7
+  rotate: false
+  xy: 129, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+image/FreeGame-BigScore-VFX-9
+  rotate: false
+  xy: 0, 774
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

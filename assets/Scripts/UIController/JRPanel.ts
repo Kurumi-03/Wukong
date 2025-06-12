@@ -6,7 +6,7 @@ import {
     Node,
     Vec3
 } from 'cc';
-import {Utils} from './Utils';
+import { Utils } from '../Use/Utils';
 const {ccclass, property} = _decorator;
 
 @ccclass('JRPanel')

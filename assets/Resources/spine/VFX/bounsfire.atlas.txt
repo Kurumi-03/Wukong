@@ -1,0 +1,202 @@
+
+bounsfire.png
+size: 750, 750
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+image/Bonus-VFX-B-0
+  rotate: false
+  xy: 387, 463
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-1
+  rotate: false
+  xy: 258, 463
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-10
+  rotate: false
+  xy: 129, 486
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-11
+  rotate: false
+  xy: 0, 486
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-12
+  rotate: true
+  xy: 698, 493
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-13
+  rotate: true
+  xy: 645, 493
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-2
+  rotate: false
+  xy: 516, 516
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-3
+  rotate: false
+  xy: 387, 516
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-4
+  rotate: false
+  xy: 258, 539
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-5
+  rotate: false
+  xy: 129, 539
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-6
+  rotate: false
+  xy: 0, 539
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-7
+  rotate: false
+  xy: 516, 569
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-8
+  rotate: false
+  xy: 387, 592
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-B-9
+  rotate: false
+  xy: 258, 592
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-0
+  rotate: false
+  xy: 129, 592
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-1
+  rotate: false
+  xy: 0, 592
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-10
+  rotate: true
+  xy: 698, 622
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-11
+  rotate: true
+  xy: 645, 622
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-12
+  rotate: false
+  xy: 516, 645
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-13
+  rotate: false
+  xy: 387, 645
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-2
+  rotate: false
+  xy: 258, 645
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-3
+  rotate: false
+  xy: 129, 645
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-4
+  rotate: false
+  xy: 0, 645
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-5
+  rotate: false
+  xy: 516, 698
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-6
+  rotate: false
+  xy: 387, 698
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-7
+  rotate: false
+  xy: 258, 698
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-8
+  rotate: false
+  xy: 129, 698
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1
+image/Bonus-VFX-Y-9
+  rotate: false
+  xy: 0, 698
+  size: 128, 52
+  orig: 128, 52
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,62 @@
+
+Laser.png
+size: 751, 751
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+image/Laser-Wukong-0
+  rotate: true
+  xy: 513, 239
+  size: 512, 107
+  orig: 512, 107
+  offset: 0, 0
+  index: -1
+image/Laser-Wukong-1
+  rotate: false
+  xy: 0, 0
+  size: 512, 107
+  orig: 512, 107
+  offset: 0, 0
+  index: -1
+image/Laser-Wukong-2
+  rotate: false
+  xy: 0, 108
+  size: 512, 107
+  orig: 512, 107
+  offset: 0, 0
+  index: -1
+image/Laser-Wukong-3
+  rotate: false
+  xy: 0, 216
+  size: 512, 107
+  orig: 512, 107
+  offset: 0, 0
+  index: -1
+image/Laser-Yangjian-0
+  rotate: false
+  xy: 0, 324
+  size: 512, 106
+  orig: 512, 106
+  offset: 0, 0
+  index: -1
+image/Laser-Yangjian-1
+  rotate: false
+  xy: 0, 431
+  size: 512, 106
+  orig: 512, 106
+  offset: 0, 0
+  index: -1
+image/Laser-Yangjian-2
+  rotate: false
+  xy: 0, 538
+  size: 512, 106
+  orig: 512, 106
+  offset: 0, 0
+  index: -1
+image/Laser-Yangjian-3
+  rotate: false
+  xy: 0, 645
+  size: 512, 106
+  orig: 512, 106
+  offset: 0, 0
+  index: -1

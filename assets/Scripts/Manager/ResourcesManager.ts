@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Sprite, SpriteFrame } from 'cc';
-import Singleton from './Singleton';
+import Singleton from '../Use/Singleton';
 const { ccclass, property } = _decorator;
 
 @ccclass('ResourcesManager')
