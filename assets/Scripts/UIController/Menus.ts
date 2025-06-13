@@ -15,6 +15,9 @@ export class Menus extends Component {
     @property(Node)
     help : Node | Node = null;
 
+    @property(Node)
+    desk:Node|null = null;
+
     protected start(): void {
         this.autoBetMenu.active = false;
         this.menu.active = false;
@@ -55,4 +58,11 @@ export class Menus extends Component {
         this.help.active = false;
     }
 
+    OpenDesk(){
+        this.desk.active = true;
+    }
+
+    CloseDesk(){
+        this.desk.active = false;
+    }
 }

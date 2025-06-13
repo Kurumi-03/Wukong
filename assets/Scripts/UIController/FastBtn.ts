@@ -1,35 +1,36 @@
 import {
-    _decorator,
-    Component,
-    Node,
-    Sprite,
-    SpriteFrame
-} from 'cc';
-const {ccclass, property} = _decorator;
+    _decorator, Button, Component, Node, Sprite, }
+from 'cc';
+import {
+    ResourcesManager
+}
+from '../Manager/ResourcesManager';
+const {
+    ccclass, property
+}
+= _decorator;
 
-@ccclass('FastBtn')
-export class FastBtn extends Component {
-    @property(SpriteFrame)
-    sprites : SpriteFrame[] = [];
+@ccclass('FastBtn') export class FastBtn extends Component {
+    @property(Sprite) img: Sprite | null = null;
 
-    @property(Sprite)
-    img : Sprite | null = null;
+    @property(Node) fastNode: Node | null = null;
 
-    @property(Node)
-    fastNode : Node | null = null;
+    isFast: boolean = false;
 
-    isFast : boolean = false;
-    private isFastNum : number = 0;
-
-    protected start(): void {
-        this.img.spriteFrame = this.sprites[0];
+    protected start():void {
+        this.img.spriteFrame = ResourcesManager.Instance(ResourcesManager).fastBtnImg[0];
         this.fastNode.active = false;
     }
 
     ChangeFast() {
         this.isFast = !this.isFast;
-        this.isFastNum = (this.isFastNum + 1) % 2;
-        this.img.spriteFrame = this.sprites[this.isFastNum];
+        console.log(Number(this.isFast));
+        this.img.spriteFrame = ResourcesManager.Instance(ResourcesManager).fastBtnImg[Number(this.isFast)];
         this.fastNode.active = this.isFast;
+
+        let btn = this.node.getComponent(Button);
+        btn.normalSprite = ResourcesManager.Instance(ResourcesManager).fastBtnImg[Number(this.isFast)];
+        btn.hoverSprite = ResourcesManager.Instance(ResourcesManager).fastBtnImg[Number(this.isFast)+2];
     }
+
 }

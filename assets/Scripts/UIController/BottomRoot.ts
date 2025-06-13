@@ -15,6 +15,9 @@ export class BottomRoot extends Component {
     @property(BtnBlock)
     fastBtn : BtnBlock | null = null;
 
+    @property(BtnBlock)
+    deskBtn:BtnBlock |null = null;
+
     @property(BetBtn)
     BetBtn : BetBtn | null = null;
 
@@ -25,6 +28,7 @@ export class BottomRoot extends Component {
         this.menuBtn.DisableBtn();
         this.autoBtn.DisableBtn();
         this.fastBtn.DisableBtn();
+        this.deskBtn.DisableBtn();
         this.BetBtn.DisableBtn();
     }
 
@@ -32,6 +36,7 @@ export class BottomRoot extends Component {
         this.menuBtn.EnableBtn();
         this.autoBtn.EnableBtn();
         this.fastBtn.EnableBtn();
+        this.deskBtn.DisableBtn();
         this.BetBtn.EnableBtn();
     }
 
