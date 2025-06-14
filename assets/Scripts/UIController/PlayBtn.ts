@@ -1,5 +1,6 @@
 import {
     _decorator,
+    Button,
     CCFloat,
     CCInteger,
     Component,
@@ -39,6 +40,7 @@ export class PlayBtn extends Component {
     private _rotateTween : Tween < Node > = null;
     private _currentSpeed : number = 0;
     private isPlay:boolean = false;
+    private isShow:boolean  = false;
 
     start() {
         this.startSlowRotate();
@@ -78,5 +80,7 @@ export class PlayBtn extends Component {
         this.num.string = data.toString();
     }
 
-
+    EnableBtn(isShow:boolean){
+        this.node.getComponentInChildren(Button).interactable = isShow;
+    }
 }

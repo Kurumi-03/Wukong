@@ -10,36 +10,43 @@ import {
 } from 'cc';
 import { ResourcesManager } from '../Manager/ResourcesManager';
 import { TextEffect } from '../Effect/TextEffect';
-const {ccclass, property} = _decorator;
+import { EventManager } from '../Manager/EventManager';
+const { ccclass, property } = _decorator;
 
 @ccclass('BetTop')
 export class BetTop extends Component {
     @property(Sprite)
-    loopText : Sprite | null = null;
+    loopText: Sprite | null = null;
 
     @property(CCFloat)
-    showTime : number = 0;
+    showTime: number = 0;
 
     @property(CCFloat)
-    fadeTime : number = 0;
+    fadeTime: number = 0;
 
     @property(Node)
-    winScore : Node | null = null;
+    winScore: Node | null = null;
 
     @property(Label)
-    scoreLabel : Label | null = null;
+    scoreLabel: Label | null = null;
 
     @property(CCFloat)
-    scoreChangeTime : number = 0;
+    scoreChangeTime: number = 0;
 
     @property(Label)
-    multiplierLabel : Label | null = null;
+    multiplierLabel: Label | null = null;
 
-    private count : number = 0;
+    private count: number = 0;
     private spriteArray = null;
 
-    private lastScore : number = 0;
-    private lastMultiplier : number = 0;
+    private lastScore: number = 0;
+    private lastMultiplier: number = 0;
+
+    protected onLoad(): void {
+        EventManager.Register("ShowLoopText", this.ShowLoopText.bind(this));
+        EventManager.Register("ShowWinScore", this.ShowWinScore.bind(this));
+        EventManager.Register("ShowMultiplier", this.ShowMultiplier.bind(this));
+    }
 
     protected start(): void {
         this.loopText.node.active = true;
@@ -59,7 +66,7 @@ export class BetTop extends Component {
 
     FadeIn() {
         const fade = this.loopText.getComponent(UIOpacity);
-        tween(fade).delay(this.showTime).to(this.fadeTime, {opacity: 0}).call(() => {
+        tween(fade).delay(this.showTime).to(this.fadeTime, { opacity: 0 }).call(() => {
             this.count = (this.count + 1) % this.spriteArray.length;
             this.loopText.spriteFrame = this.spriteArray[this.count];
             this.FadeOut();
@@ -69,12 +76,12 @@ export class BetTop extends Component {
     FadeOut() {
         const spriteArray = ResourcesManager.Instance(ResourcesManager).loopTextArrzy;
         const fade = this.loopText.getComponent(UIOpacity);
-        tween(fade).to(this.fadeTime, {opacity: 255}).call(() => {
+        tween(fade).to(this.fadeTime, { opacity: 255 }).call(() => {
             this.FadeIn();
         }).start();
     }
 
-    ShowWinScore(score : number) {
+    ShowWinScore(score: number) {
         this.winScore.active = true;
         this.loopText.node.active = false;
         this.multiplierLabel.node.active = false;
@@ -84,9 +91,15 @@ export class BetTop extends Component {
         this.lastScore = score;
     }
 
-    ShowMultiplier(multiplier : number) {
+    ShowMultiplier(multiplier: number) {
         this.multiplierLabel.node.active = true;
         this.multiplierLabel.string = "*" + multiplier;
         this.lastMultiplier = multiplier;
+    }
+
+    protected onDestroy(): void {
+        EventManager.UnRegister("ShowLoopText", this.ShowLoopText.bind(this));
+        EventManager.UnRegister("ShowWinScore", this.ShowWinScore.bind(this));
+        EventManager.UnRegister("ShowMultiplier", this.ShowMultiplier.bind(this));
     }
 }

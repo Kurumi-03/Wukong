@@ -1,5 +1,6 @@
 import {
     _decorator,
+    Button,
     CCInteger,
     Component,
     Label,
@@ -26,6 +27,9 @@ export class LeftNode extends Component {
     @property(Label)
     freeWild: Label | null = null;
 
+    @property(Node)
+    block: Node | null = null;
+
     @property(CCInteger)
     baseBuyValue: number = 0;
 
@@ -36,6 +40,7 @@ export class LeftNode extends Component {
     protected start(): void {
         this.ShowBuyBtn();
         this.ChangeBuyValue(ConstManager.Instance(ConstManager).betArray[0]);
+        this.block.active = false;
     }
 
     ShowBuyBtn() {
@@ -60,6 +65,11 @@ export class LeftNode extends Component {
 
     ChangeFreeWild(value: number) {
         this.freeWild.string = "*" + value.toString();
+    }
+
+    EnableBtn(isShow: boolean) {
+        this.block.active = !isShow;
+        this.node.getComponentInChildren(Button).interactable = isShow;
     }
 
     protected onDestroy(): void {

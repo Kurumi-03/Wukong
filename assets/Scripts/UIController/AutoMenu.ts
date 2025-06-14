@@ -6,6 +6,7 @@ import {
     Toggle
 } from 'cc';
 import {ConstManager} from '../Manager/ConstManager';
+import { EventManager } from '../Manager/EventManager';
 const {ccclass, property} = _decorator;
 
 @ccclass('AutoMenu')
@@ -24,6 +25,10 @@ export class AutoMenu extends Component {
 
     isFast:boolean = false;
     isFree:boolean = false;
+
+    protected onLoad(): void {
+        EventManager.Register("AutoPlay",this.AutoPlay.bind(this));
+    }
 
     protected start(): void {
         let array = ConstManager.Instance(ConstManager).countArray;
@@ -57,11 +62,13 @@ export class AutoMenu extends Component {
 
     FastMode(){
         this.isFast = !this.isFast;
-        console.log(this.isFast);
     }
 
     Free(){
         this.isFree = !this.isFree;
-        console.log(this.isFree);
+    }
+
+    protected onDestroy(): void {
+        EventManager.UnRegister("AutoPlay",this.AutoPlay.bind(this));
     }
 }

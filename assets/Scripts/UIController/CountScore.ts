@@ -1,33 +1,49 @@
 import {
     _decorator,
+    CCFloat,
     Component,
     Label,
 } from 'cc';
-const {ccclass, property} = _decorator;
+import { TextEffect } from '../Effect/TextEffect';
+import { EventManager } from '../Manager/EventManager';
+const { ccclass, property } = _decorator;
 
 @ccclass('CountScore')
 export class CountScore extends Component {
     @property(Label)
-    winScore : Label | null = null;
+    winScore: Label | null = null;
 
     @property(Label)
-    playerScore : Label | null = null;
+    playerScore: Label | null = null;
 
-    winNum:number = 0;
-    playerNum:number = 0;
+    @property(CCFloat)
+    changeTime: number = 0;
+
+    winNum: number = 0;
+    playerNum: number = 0;
+
+    protected onLoad(): void {
+        EventManager.Register("UpdateWinScore", this.UpdateWinScore.bind(this));
+        EventManager.Register("UpdatePlayerScore", this.UpdatePlayerScore.bind(this));
+    }
 
     protected start(): void {
         this.winScore.string = this.winNum.toString();
         this.playerScore.string = this.playerNum.toString();
     }
 
-    UpdateWinScore(data:number){
+    UpdateWinScore(data: number) {
+        this.winScore.getComponent(TextEffect).Roll(this.winNum, data, this.changeTime);
         this.winNum = data;
-        this.winScore.string = data.toString();
     }
-    
-    UpdatePlayerScore(data:number){
+
+    UpdatePlayerScore(data: number) {
+        this.playerScore.getComponent(TextEffect).Roll(this.playerNum, data, this.changeTime);
         this.playerNum = data;
-        this.playerScore.string = data.toString();
+    }
+
+    protected onDestroy(): void {
+        EventManager.UnRegister("UpdateWinScore", this.UpdateWinScore.bind(this));
+        EventManager.UnRegister("UpdatePlayerScore", this.UpdatePlayerScore.bind(this));
     }
 }

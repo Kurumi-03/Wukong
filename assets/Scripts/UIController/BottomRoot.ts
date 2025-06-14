@@ -1,46 +1,60 @@
-import {_decorator, Component, Node} from 'cc';
+import { _decorator, Component, Label, Node } from 'cc';
 import { BtnBlock } from './BtnBlock';
 import { BetBtn } from './BetBtn';
 import { PlayBtn } from './PlayBtn';
-const {ccclass, property} = _decorator;
+import { ConstManager } from '../Manager/ConstManager';
+import { EventManager } from '../Manager/EventManager';
+import { LeftNode } from './LeftNode';
+const { ccclass, property } = _decorator;
 
 @ccclass('BottomRoot')
 export class BottomRoot extends Component {
     @property(BtnBlock)
-    menuBtn : BtnBlock | null = null;
+    menuBtn: BtnBlock | null = null;
 
     @property(BtnBlock)
-    autoBtn : BtnBlock | null = null;
+    autoBtn: BtnBlock | null = null;
 
     @property(BtnBlock)
-    fastBtn : BtnBlock | null = null;
+    fastBtn: BtnBlock | null = null;
 
     @property(BtnBlock)
-    deskBtn:BtnBlock |null = null;
+    deskBtn: BtnBlock | null = null;
 
     @property(BetBtn)
-    BetBtn : BetBtn | null = null;
+    BetBtn: BetBtn | null = null;
 
     @property(PlayBtn)
-    playBtn : PlayBtn | null = null;
+    playBtn: PlayBtn | null = null;
 
-    DisableAllBtn(){
-        this.menuBtn.DisableBtn();
-        this.autoBtn.DisableBtn();
-        this.fastBtn.DisableBtn();
-        this.deskBtn.DisableBtn();
-        this.BetBtn.DisableBtn();
+    @property(LeftNode)
+    leftNode: LeftNode | null = null;
+
+    protected onLoad(): void {
+        EventManager.Register("UpdateDeskIndex", this.UpdateDeskIndex.bind(this));
+        EventManager.Register("EnableAllBtn", this.EnableAllBtn.bind(this));
     }
 
-    EnableAllBtn(){
-        this.menuBtn.EnableBtn();
-        this.autoBtn.EnableBtn();
-        this.fastBtn.EnableBtn();
-        this.deskBtn.DisableBtn();
-        this.BetBtn.EnableBtn();
+    protected start(): void {
+        this.UpdateDeskIndex();
     }
 
-    FastMode(){
-        
+    EnableAllBtn(isShow: boolean) {
+        this.menuBtn.EnableBtn(isShow);
+        this.autoBtn.EnableBtn(isShow);
+        this.fastBtn.EnableBtn(isShow);
+        this.deskBtn.EnableBtn(isShow);
+        this.BetBtn.EnableBtn(isShow);
+        this.playBtn.EnableBtn(isShow);
+        this.leftNode.EnableBtn(isShow);
+    }
+
+    UpdateDeskIndex() {
+        this.deskBtn.node.getComponentInChildren(Label).string = ConstManager.Instance(ConstManager).currentDeskIndex.toString();
+    }
+
+    protected onDestroy(): void {
+        EventManager.UnRegister("UpdateDeskIndex", this.UpdateDeskIndex.bind(this));
+        EventManager.UnRegister("EnableAllBtn", this.EnableAllBtn.bind(this));
     }
 }

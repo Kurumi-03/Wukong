@@ -1,27 +1,33 @@
-import {_decorator, Component, Node} from 'cc';
-const {ccclass, property} = _decorator;
+import { _decorator, Component, Node } from 'cc';
+const { ccclass, property } = _decorator;
 
 @ccclass('Menus')
 export class Menus extends Component {
     @property(Node)
-    autoBetMenu : Node | null = null;
+    autoBetMenu: Node | null = null;
 
     @property(Node)
-    menu : Node | null = null;
+    menu: Node | null = null;
 
     @property(Node)
-    setting : Node | null = null;
+    setting: Node | null = null;
 
     @property(Node)
-    help : Node | Node = null;
+    help: Node | Node = null;
 
     @property(Node)
-    desk:Node|null = null;
+    desk: Node | null = null;
+
+    @property(Node)
+    history: Node | null = null;
 
     protected start(): void {
         this.autoBetMenu.active = false;
         this.menu.active = false;
         this.setting.active = false;
+        this.help.active = false;
+        this.desk.active = false;
+        this.history.active = false;
     }
 
     OpenAutoBetMenu() {
@@ -49,20 +55,29 @@ export class Menus extends Component {
         this.setting.active = false;
     }
 
-    OpenHelp(){
+    OpenHelp() {
         this.help.active = true;
         this.CloseMenu();
     }
 
-    CloseHelp(){
+    CloseHelp() {
         this.help.active = false;
     }
 
-    OpenDesk(){
+    OpenDesk() {
         this.desk.active = true;
     }
 
-    CloseDesk(){
+    CloseDesk() {
         this.desk.active = false;
+    }
+
+    OpenHistory(){
+        this.history.active = true;
+        this.CloseMenu();
+    }
+
+    CloseHistory(){
+        this.history.active = false
     }
 }

@@ -4,27 +4,22 @@ import {
     Component,
     Sprite,
 } from 'cc';
-const {ccclass, property} = _decorator;
+const { ccclass, property } = _decorator;
 
 @ccclass('BtnBlock')
 export class BtnBlock extends Component {
     @property(Sprite)
-    block : Sprite | null = null;
+    block: Sprite | null = null;
 
     @property(Button)
-    btn : Button | null = null;
+    btn: Button | null = null;
 
     protected start(): void {
-        this.EnableBtn();
+        this.EnableBtn(true);
     }
 
-    EnableBtn() {
-        this.block.node.active = false;
-        this.btn.interactable = true;
-    }
-
-    DisableBtn() {
-        this.block.node.active = true;
-        this.btn.interactable = false;
+    EnableBtn(isShow: boolean) {
+        this.block.node.active = !isShow;
+        this.btn.interactable = isShow;
     }
 }

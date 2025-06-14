@@ -28,4 +28,7 @@ export class ResourcesManager extends Singleton<ResourcesManager > {
 
     @property(SpriteFrame)
     deskItemImg:SpriteFrame[] = [];
+
+    @property(SpriteFrame)
+    bgImg:SpriteFrame[] = [];
 }

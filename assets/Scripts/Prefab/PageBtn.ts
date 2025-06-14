@@ -14,7 +14,6 @@ export class PageBtn extends Component {
     pageIndex:number = 0;
 
     OnClickPage() {
-        console.log("点击");
         EventManager.Send("ShowPageItem",this.pageIndex);
         if (this.scaleTween) {
             this.scaleTween.stop();

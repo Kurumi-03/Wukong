@@ -77,7 +77,8 @@ const {
         let deskInfos = ConstManager.Instance(ConstManager).deskInfos;
         for (let i = 0; i < deskInfos.length; i++) {
             for (let j = 0; j < deskInfos[i].length; j++) {
-                if (deskInfos[i][j].isClockMe == true) {
+                //如果有锁定项就选锁定项
+                if (deskInfos[i][j].state == 3) {
                     this.UpdateDeskInfo(deskInfos[i][j]);
                     this.currentPage = i;//得到初始在第几页
                     this.currentItem = deskInfos[i][j];
@@ -90,6 +91,12 @@ const {
             page.getComponentInChildren(Label).string = (i + 1).toString();
             page.getComponent(PageBtn).pageIndex = i;
         }
+        //此处需要做没找到的处理
+        if (this.currentItem == null) {
+            this.currentPage = 0;
+            this.currentItem = deskInfos[0][0];
+            this.ShowPageItem(this.currentPage);
+        }
 
     }
 
@@ -97,7 +104,7 @@ const {
         this.ShowPageItem(pageIndex);
     }
 
-    ShowPageItem(index: number) {
+    ShowPageItem(index: number, isEmpty: boolean = false) {
         this.currentPage = index;
         //每次展示前需要将之前的数据清空
         this.deskItemParent.children.forEach(element => {
@@ -105,22 +112,34 @@ const {
         });
         let deskInfos = ConstManager.Instance(ConstManager).deskInfos
         for (let i = 0; i < deskInfos[index].length; i++) {
-            //显示item栏
-            let deskItem = instantiate(this.deskItemPrefab);
-            this.deskItemParent.addChild(deskItem);
-            deskItem.getComponent(DeskItem).UpdateInfo(deskInfos[index][i]);
+            if (isEmpty == true) {
+                if (deskInfos[index][i].state == 0) {
+                    let deskItem = instantiate(this.deskItemPrefab);
+                    this.deskItemParent.addChild(deskItem);
+                    deskItem.getComponent(DeskItem).UpdateInfo(deskInfos[index][i]);
+                }
+            }
+            else {
+                //显示所有item栏
+                let deskItem = instantiate(this.deskItemPrefab);
+                this.deskItemParent.addChild(deskItem);
+                deskItem.getComponent(DeskItem).UpdateInfo(deskInfos[index][i]);
+            }
         }
     }
 
     OnClickShowEmpty() {
         this.isShowEmpty = !this.isShowEmpty;
         this.showEmpty.spriteFrame = ResourcesManager.Instance(ResourcesManager).deskEmptyImg[Number(this.isShowEmpty)];
-        this.ShowEmptyDesk();
+        if (this.isShowEmpty) {
+            this.ShowPageItem(this.currentPage, true);
+        }
+        else {
+            this.ShowPageItem(this.currentPage);
+        }
     }
 
-    ShowEmptyDesk() {
 
-    }
 
     UpdateDeskInfo(deskInfo: DeskInfo) {
         this.deskInfoNum.string = deskInfo.index.toString();
@@ -143,8 +162,28 @@ const {
     }
 
     OnClickLock() {
+        //将锁定的与选中的进行数据交换和显示转换
+        let clock: Node = null;
+        let select: Node = null;
         for (let i = 0; i < this.deskItemParent.children.length; i++) {
-            // if(this.deskItemParent.children[i].getComponent(DeskItem).)
+            if (this.deskItemParent.children[i].getComponent(DeskItem).deskInfo.state == 3) {
+                clock = this.deskItemParent.children[i];
+            }
+            if (this.deskItemParent.children[i].getComponent(DeskItem).deskInfo.index == this.currentItem.index) {
+                select = this.deskItemParent.children[i];
+            }
         }
+        if (clock != null && select != null) {
+            clock.getComponent(DeskItem).deskInfo.state = 0;
+            select.getComponent(DeskItem).deskInfo.state = 3;
+            clock.getComponent(DeskItem).UpdateInfo(null);
+            select.getComponent(DeskItem).UpdateInfo(null);
+        }
+    }
+
+    OnClickConfirm() {
+        ConstManager.Instance(ConstManager).currentDeskIndex = this.currentItem.index;
+        EventManager.Send("UpdateDeskIndex");
+        this.node.active = false;
     }
 }
