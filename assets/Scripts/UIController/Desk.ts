@@ -7,10 +7,10 @@ import {
 }
     from '../Manager/ResourcesManager';
 import { EventManager } from '../Manager/EventManager';
-import { ConstManager, DeskInfo } from '../Manager/ConstManager';
 import { Utils } from '../Use/Utils';
 import { DeskItem } from '../Prefab/DeskItem';
 import { PageBtn } from '../Prefab/PageBtn';
+import { DataManager, DeskInfo } from '../Manager/DataManager';
 const {
     ccclass, property
 }
@@ -74,7 +74,7 @@ const {
     InitData() {
         this.showEmpty.spriteFrame = ResourcesManager.Instance(ResourcesManager).deskEmptyImg[0];
         //初始显示锁定台桌信息
-        let deskInfos = ConstManager.Instance(ConstManager).deskInfos;
+        let deskInfos = DataManager.Instance(DataManager).deskInfos;
         for (let i = 0; i < deskInfos.length; i++) {
             for (let j = 0; j < deskInfos[i].length; j++) {
                 //如果有锁定项就选锁定项
@@ -110,7 +110,7 @@ const {
         this.deskItemParent.children.forEach(element => {
             element.destroy();
         });
-        let deskInfos = ConstManager.Instance(ConstManager).deskInfos
+        let deskInfos = DataManager.Instance(DataManager).deskInfos
         for (let i = 0; i < deskInfos[index].length; i++) {
             if (isEmpty == true) {
                 if (deskInfos[index][i].state == 0) {
@@ -182,7 +182,7 @@ const {
     }
 
     OnClickConfirm() {
-        ConstManager.Instance(ConstManager).currentDeskIndex = this.currentItem.index;
+        DataManager.Instance(DataManager).currentDeskIndex = this.currentItem.index;
         EventManager.Send("UpdateDeskIndex");
         this.node.active = false;
     }

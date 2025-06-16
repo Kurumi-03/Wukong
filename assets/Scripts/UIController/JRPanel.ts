@@ -10,10 +10,9 @@ import {
     Tween,
     Vec3
 } from 'cc';
-import { Utils } from '../Use/Utils';
 import { TextEffect } from '../Effect/TextEffect';
-import { ConstManager } from '../Manager/ConstManager';
 import { EventManager } from '../Manager/EventManager';
+import { DataManager } from '../Manager/DataManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('JRPanel')
@@ -51,7 +50,7 @@ export class JRPanel extends Component {
 
     ChangeJRValue() {
         for (let i = 0; i < this.jrData.length; i++) {
-            this.texts[i].getComponent(TextEffect).Roll(this.jrData[i], ConstManager.Instance(ConstManager).jrData[i], this.changeTime);
+            this.texts[i].getComponent(TextEffect).Roll(this.jrData[i], DataManager.Instance(DataManager).jrData[i], this.changeTime);
         }
     }
 

@@ -5,8 +5,8 @@ import {
     Node,
     Toggle
 } from 'cc';
-import {ConstManager} from '../Manager/ConstManager';
 import { EventManager } from '../Manager/EventManager';
+import { DataManager } from '../Manager/DataManager';
 const {ccclass, property} = _decorator;
 
 @ccclass('AutoMenu')
@@ -31,7 +31,7 @@ export class AutoMenu extends Component {
     }
 
     protected start(): void {
-        let array = ConstManager.Instance(ConstManager).countArray;
+        let array = DataManager.Instance(DataManager).countArray;
         this.currentCount = array[this.currentIndex];
         this.betCount.string = this.currentCount.toString();
         this.fastMode.isChecked = this.isFast;
@@ -43,7 +43,7 @@ export class AutoMenu extends Component {
     }
 
     Add() {
-        let array = ConstManager.Instance(ConstManager).countArray;
+        let array = DataManager.Instance(DataManager).countArray;
         if (this.currentIndex >= array.length-1) 
             return;
         this.currentIndex ++;
@@ -52,7 +52,7 @@ export class AutoMenu extends Component {
     }
 
     Delete() {
-        let array = ConstManager.Instance(ConstManager).countArray;
+        let array = DataManager.Instance(DataManager).countArray;
         if (this.currentIndex <= 0) 
             return;
         this.currentIndex --;

@@ -3,9 +3,12 @@ import {
     CCFloat,
     Component,
     Label,
+    utils,
 } from 'cc';
 import { TextEffect } from '../Effect/TextEffect';
 import { EventManager } from '../Manager/EventManager';
+import { DataManager } from '../Manager/DataManager';
+import { Utils } from '../Use/Utils';
 const { ccclass, property } = _decorator;
 
 @ccclass('CountScore')
@@ -28,18 +31,23 @@ export class CountScore extends Component {
     }
 
     protected start(): void {
-        this.winScore.string = this.winNum.toString();
-        this.playerScore.string = this.playerNum.toString();
+        this.winNum = 0;
+        this.playerNum = DataManager.Instance(DataManager).playerScore;
+        this.winScore.string = Utils.NumberToString(this.winNum);
+        this.playerScore.string = Utils.NumberToString(this.playerNum);
     }
 
+    //纯粹赋值
     UpdateWinScore(data: number) {
         this.winScore.getComponent(TextEffect).Roll(this.winNum, data, this.changeTime);
         this.winNum = data;
     }
 
+    //在原有值的基础上更改
     UpdatePlayerScore(data: number) {
-        this.playerScore.getComponent(TextEffect).Roll(this.playerNum, data, this.changeTime);
-        this.playerNum = data;
+        let temp: number = this.playerNum + data;
+        this.playerScore.getComponent(TextEffect).Roll(this.playerNum, temp, this.changeTime);
+        this.playerNum += data;
     }
 
     protected onDestroy(): void {

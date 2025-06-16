@@ -3,8 +3,8 @@ import {
 }
     from 'cc';
 import { EventManager } from '../Manager/EventManager';
-import { DeskInfo } from '../Manager/ConstManager';
 import { ResourcesManager } from '../Manager/ResourcesManager';
+import { DeskInfo } from '../Manager/DataManager';
 const {
     ccclass, property
 }

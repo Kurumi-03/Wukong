@@ -7,7 +7,7 @@ import {
     Node
 } from 'cc';
 import { EventManager } from '../Manager/EventManager';
-import { ConstManager } from '../Manager/ConstManager';
+import { DataManager } from '../Manager/DataManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('LeftNode')
@@ -39,7 +39,7 @@ export class LeftNode extends Component {
 
     protected start(): void {
         this.ShowBuyBtn();
-        this.ChangeBuyValue(ConstManager.Instance(ConstManager).betArray[0]);
+        this.ChangeBuyValue(DataManager.Instance(DataManager).betArray[0]);
         this.block.active = false;
     }
 

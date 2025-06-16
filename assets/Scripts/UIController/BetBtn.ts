@@ -11,8 +11,8 @@ import {
     UITransform,
     Vec2
 } from 'cc';
-import { ConstManager } from '../Manager/ConstManager';
 import { EventManager } from '../Manager/EventManager';
+import { DataManager } from '../Manager/DataManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('BetBtn') export class BetBtn extends Component {
@@ -42,14 +42,14 @@ const { ccclass, property } = _decorator;
     }
 
     protected start(): void {
-        let array = ConstManager.Instance(ConstManager).betArray;
+        let array = DataManager.Instance(DataManager).betArray;
         this.num.string = array[this.currentIndex].toString();
         this.betSlider.fillRange = 0;
         this.EnableBtn(true);
     }
 
     Add() {
-        let array = ConstManager.Instance(ConstManager).betArray;
+        let array = DataManager.Instance(DataManager).betArray;
         if (this.currentIndex >= array.length - 1)
             return;
 
@@ -61,7 +61,7 @@ const { ccclass, property } = _decorator;
     }
 
     Delete() {
-        let array = ConstManager.Instance(ConstManager).betArray;
+        let array = DataManager.Instance(DataManager).betArray;
         if (this.currentIndex <= 0)
             return;
 
@@ -86,7 +86,7 @@ const { ccclass, property } = _decorator;
 
     // 根据触摸的值来得到下注值
     GetBetValue(progress: number) {
-        let array = ConstManager.Instance(ConstManager).betArray;
+        let array = DataManager.Instance(DataManager).betArray;
         let index = Math.floor((array.length - 1) * progress);
         this.ChangeValue(array[index]);
     }

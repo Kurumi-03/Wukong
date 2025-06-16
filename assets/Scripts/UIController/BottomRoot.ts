@@ -2,9 +2,9 @@ import { _decorator, Component, Label, Node } from 'cc';
 import { BtnBlock } from './BtnBlock';
 import { BetBtn } from './BetBtn';
 import { PlayBtn } from './PlayBtn';
-import { ConstManager } from '../Manager/ConstManager';
 import { EventManager } from '../Manager/EventManager';
 import { LeftNode } from './LeftNode';
+import { DataManager } from '../Manager/DataManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('BottomRoot')
@@ -50,7 +50,7 @@ export class BottomRoot extends Component {
     }
 
     UpdateDeskIndex() {
-        this.deskBtn.node.getComponentInChildren(Label).string = ConstManager.Instance(ConstManager).currentDeskIndex.toString();
+        this.deskBtn.node.getComponentInChildren(Label).string = DataManager.Instance(DataManager).currentDeskIndex.toString();
     }
 
     protected onDestroy(): void {
