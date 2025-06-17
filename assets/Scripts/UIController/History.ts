@@ -2,6 +2,7 @@ import { _decorator, Component, instantiate, Label, Node, Prefab, tween, UITrans
 import { HistroyItem } from '../Prefab/HistroyItem';
 import { DataManager } from '../Manager/DataManager';
 import { EventManager } from '../Manager/EventManager';
+import { DatePanel } from './DatePanel';
 const { ccclass, property } = _decorator;
 
 @ccclass('History')
@@ -21,6 +22,9 @@ export class History extends Component {
     @property(Node)
     copyTip: Node | null = null;
 
+    @property(DatePanel)
+    datePanel: DatePanel | null = null;
+
     private isMove: boolean = false;//标记提示
 
     protected onLoad(): void {
@@ -29,6 +33,8 @@ export class History extends Component {
 
     protected start(): void {
         this.ShowHistoryItem();
+        this.UpdateDate();
+        this.datePanel.node.active = false;
     }
 
     ShowHistoryItem() {
@@ -41,7 +47,6 @@ export class History extends Component {
     }
 
     OnClickCopyID() {
-        console.log(this.isMove);
         if (navigator.clipboard) {
             navigator.clipboard.writeText(this.id.string).then(() => {
                 let yOffset = this.copyTip.getComponent(UITransform).contentSize.y;
@@ -62,6 +67,23 @@ export class History extends Component {
     UpdateID(s: string) {
         this.id.string = s;
     }
+
+    UpdateDate() {
+        const array = DataManager.Instance(DataManager).date.split("/");
+        this.date.string = array[0] + "/" + array[1] + "/" + array[2];
+    }
+
+    ShowDatePanel() {
+        this.datePanel.node.active = true;
+    }
+
+    CloseDatePanel() {
+        this.datePanel.node.active = false;
+        //退出時做查詢
+        const data = this.datePanel.findData;
+        console.log(data);
+    }
+
 
     protected onDestroy(): void {
         EventManager.UnRegister("UpdateID", this.UpdateID.bind(this));

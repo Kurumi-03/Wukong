@@ -30,9 +30,6 @@ export class LeftNode extends Component {
     @property(Node)
     block: Node | null = null;
 
-    @property(CCInteger)
-    baseBuyValue: number = 0;
-
     protected onLoad(): void {
         EventManager.Register("ChangeBuyValue", this.ChangeBuyValue.bind(this));
     }
@@ -55,7 +52,7 @@ export class LeftNode extends Component {
 
     ChangeBuyValue(value: number) {
         this.buyValue.string = "$" + (
-            this.baseBuyValue * value
+            DataManager.Instance(DataManager).baseBuyValue * value
         ).toString();
     }
 

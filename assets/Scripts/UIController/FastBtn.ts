@@ -24,7 +24,6 @@ const {
 
     ChangeFast() {
         this.isFast = !this.isFast;
-        console.log(Number(this.isFast));
         this.img.spriteFrame = ResourcesManager.Instance(ResourcesManager).fastBtnImg[Number(this.isFast)];
         this.fastNode.active = this.isFast;
 

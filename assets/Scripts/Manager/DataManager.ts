@@ -29,15 +29,27 @@ export class HistoryInfo {
     type: number;//游玩类型 0:直接游玩  1:中奖得到的免费游戏(红色)  2:购买得到的免费游戏(绿色)
 }
 
+export class RecordInfo{
+    gameName:string;//游戏名称
+    totalBet:number;//总下注额
+    totalWin:number;//总赢分
+    get:number;//净盈亏
+    count:number;//总下注次数
+}
+
 @ccclass('DataManager')
 export class DataManager extends Singleton<DataManager> {
     protected onLoad(): void {
         DataManager._instance = this;
     }
 
+    date: string = "2025/06/17/12/01";
+
     jrData: number[] = [132121.12, 215465.33, 77541.23, 52354.11];
 
     betArray: number[] = [0.4, 0.8, 1.6, 3.2, 6.4, 16, 20, 80];
+
+    baseBuyValue:number = 100;
 
     countArray: number[] = [10, 20, 30, 40, 50, 60, 70, 80, 90];
 
@@ -219,7 +231,30 @@ export class DataManager extends Singleton<DataManager> {
     ];
 
     winScore: number[] = [0.8, 3.6];
-    totalWinScore:number = 4.4;
+    totalWinScore: number = 4.4;
 
     playerScore: number = 1200;
+
+    iconBetTable:number[][] = [
+        [200,500,1000],
+        [50,200,500],
+        [40,100,300],
+        [30,40,240],
+        [20,30,200],
+        [16,24,160],
+        [10,20,100],
+        [8,18,80],
+        [5,15,40],
+        [60,100,2000],
+        [2,9],
+        [10,19],
+        [20,29],
+        [30,500],
+    ];
+
+    iconCountTable:number[][] = [
+        [8,9],
+        [10,11],
+        [12,30],
+    ];
 }

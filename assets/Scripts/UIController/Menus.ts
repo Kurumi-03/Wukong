@@ -21,6 +21,9 @@ export class Menus extends Component {
     @property(Node)
     history: Node | null = null;
 
+    @property(Node)
+    record: Node | null = null;
+
     protected start(): void {
         this.autoBetMenu.active = false;
         this.menu.active = false;
@@ -28,6 +31,7 @@ export class Menus extends Component {
         this.help.active = false;
         this.desk.active = false;
         this.history.active = false;
+        this.record.active = false;
     }
 
     OpenAutoBetMenu() {
@@ -72,12 +76,26 @@ export class Menus extends Component {
         this.desk.active = false;
     }
 
-    OpenHistory(){
+    OpenHistory() {
         this.history.active = true;
         this.CloseMenu();
     }
 
-    CloseHistory(){
+    CloseHistory() {
         this.history.active = false
+    }
+
+    OpenRecord(){
+        this.record.active = true;
+        this.CloseHistory();
+    }
+
+    BackRecord(){
+        this.record.active = false;
+        this.OpenHistory();
+    }
+
+    CloseRecod(){
+        this.record.active = false;
     }
 }
