@@ -1,4 +1,4 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, tween } from 'cc';
 import Singleton from '../Use/Singleton';
 import { PlayBtn } from '../UIController/PlayBtn';
 import { BottomRoot } from '../UIController/BottomRoot';
@@ -37,9 +37,15 @@ export class GameManager extends Singleton<GameManager> {
         //     this.winHistory.AddItem(1, count, 200);
         //     count++;
         // }, 2, 5);
-        this.bottonRoot.EnableAllBtn(false);
+        // this.bottonRoot.EnableAllBtn(false);
         // this.jrPanel.ChangeJRValue();
         // EventManager.Send("UpdateWinScore", 21425.45);
         // EventManager.Send("Action");
+        tween(this).call(()=>{
+            EventManager.Send("ShowWinScore",3.6);
+        }).delay(1.5).call(()=>{
+            EventManager.Send("ShowMultiplier",2);
+        }).start();
+        
     }
 }

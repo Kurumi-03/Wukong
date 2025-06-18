@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "c6dc1062-6c0e-47b8-a30e-455113b4618d",
+  "uuid": "8b3a5ed1-c36c-475f-b976-cf5aa5f72c80",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Icon8"
+    "syncNodeName": "ClearEffect"
   }
 }

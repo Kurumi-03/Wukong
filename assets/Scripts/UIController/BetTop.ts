@@ -6,7 +6,8 @@ import {
     Node,
     Sprite,
     tween,
-    UIOpacity
+    UIOpacity,
+    Vec3
 } from 'cc';
 import { ResourcesManager } from '../Manager/ResourcesManager';
 import { TextEffect } from '../Effect/TextEffect';
@@ -53,15 +54,15 @@ export class BetTop extends Component {
         this.winScore.active = false;
         this.spriteArray = ResourcesManager.Instance(ResourcesManager).loopTextArrzy;
         this.ShowLoopText();
+        this.loopText.getComponent(UIOpacity).opacity = 255;
+        this.winScore.active = false;
+        this.loopText.spriteFrame = this.spriteArray[0];
+        this.FadeIn();
     }
 
     ShowLoopText() {
         this.loopText.node.active = true;
-        this.loopText.getComponent(UIOpacity).opacity = 255;
         this.winScore.active = false;
-
-        this.loopText.spriteFrame = this.spriteArray[0];
-        this.FadeIn();
     }
 
     FadeIn() {
@@ -81,20 +82,35 @@ export class BetTop extends Component {
         }).start();
     }
 
-    ShowWinScore(score: number) {
+    ShowWinScore(score: number,call = null) {
         this.winScore.active = true;
         this.loopText.node.active = false;
         this.multiplierLabel.node.active = false;
-        tween(this.loopText.getComponent(UIOpacity)).stop();
-
-        this.scoreLabel.node.getComponent(TextEffect).Roll(this.lastScore, score, this.scoreChangeTime);
+        // tween(this.loopText.getComponent(UIOpacity)).stop();
+        this.scoreLabel.node.getComponent(TextEffect).Roll(this.lastScore, score, this.scoreChangeTime,call);
         this.lastScore = score;
     }
 
     ShowMultiplier(multiplier: number) {
         this.multiplierLabel.node.active = true;
         this.multiplierLabel.string = "*" + multiplier;
-        this.lastMultiplier = multiplier;
+        //此处需要动画效果
+        tween(this.scoreLabel.node).delay(0.5).by(0.5, {
+            position: new Vec3(5, 0)
+        }).to(0.2, {
+            scale: new Vec3(1.2, 1.2, 1.2)
+        }).call(() => {
+            let score = this.lastScore * multiplier;
+            this.scoreLabel.node.getComponent(TextEffect).Roll(this.lastScore, score, this.scoreChangeTime);
+        }).to(0.2, {
+            scale: new Vec3(1, 1, 1)
+        }).start();
+
+        tween(this.multiplierLabel.node).delay(0.5).by(0.5, {
+            position: new Vec3(-5, 0)
+        }).call(() => {
+            this.multiplierLabel.node.active = false;
+        }).start()
     }
 
     protected onDestroy(): void {

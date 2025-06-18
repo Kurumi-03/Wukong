@@ -21,6 +21,6 @@ export class WinItem extends Component {
     InitData(_icon:SpriteFrame,_count:number,_score:number){
         this.icon.spriteFrame = _icon;
         this.count.string = _count.toString();
-        this.score.string = _count.toString();
+        this.score.string = _score.toString();
     }
 }

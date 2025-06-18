@@ -21,10 +21,11 @@ export class WinHistory extends Component {
     parentNode: Node | null = null;
 
     @property(Prefab)
-    winItem: Prefab | null = null;
+    winItem: Prefab | null = null; 
 
     protected onLoad(): void {
-        EventManager.Register("AddItem", this.AddItem.bind(this));
+        EventManager.Register("AddWinItem", this.AddItem.bind(this));
+        EventManager.Register("ClearWinItem", this.ClearItem.bind(this));
     }
 
     //可在此处插入一些空节点占位
@@ -36,7 +37,15 @@ export class WinHistory extends Component {
         this.view.scrollToTop(0.5);
     }
 
+    //清理显示
+    ClearItem() {
+        for (let i = 0; i < this.parentNode.children.length; i++) {
+            this.parentNode.children[i].destroy();
+        }
+    }
+
     protected onDestroy(): void {
-        EventManager.UnRegister("AddItem", this.AddItem.bind(this));
+        EventManager.UnRegister("AddWinItem", this.AddItem.bind(this));
+        EventManager.UnRegister("ClearWinItem", this.ClearItem.bind(this));
     }
 }

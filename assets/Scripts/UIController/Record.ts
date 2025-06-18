@@ -1,29 +1,33 @@
-import { _decorator, color, Color, Component, Label, Node, SpriteFrame, ToggleContainer } from 'cc';
+import { _decorator, Component, instantiate, Label, Node, Prefab } from 'cc';
+import { DataManager } from '../Manager/DataManager';
+import { RecordItem } from '../Prefab/RecordItem';
 const { ccclass, property } = _decorator;
 
 @ccclass('Record')
 export class Record extends Component {
-    @property(ToggleContainer)
-    selectDate: ToggleContainer | null = null;
+    @property(Node)
+    itemParent: Node | null = null;
+
+    @property(Prefab)
+    recordItem: Prefab | null = null;
 
     @property(Label)
-    tip: Label | null = null;
+    dateLabel: Label | null = null;
+
+    @property(Node)
+    tip: Node | null = null;
 
     protected start(): void {
-        
+        this.AddItem();
+        this.tip.active = this.itemParent.children.length == 0 ? true : false;
     }
 
-    //根据点击的复选框得到选择的数据
-    CheckDate() {
-        let childen = this.selectDate.toggleItems;
-        for (let i = 0; i < childen.length; i++) {
-            if (childen[i].isChecked) {
-                childen[i].node.getComponentInChildren(Label).color = Color.BLACK;
-                //需要逻辑处理
-            }
-            else {
-                childen[i].node.getComponentInChildren(Label).color = Color.WHITE;
-            }
+    AddItem() {
+        const infos = DataManager.Instance(DataManager).recordInfos;
+        for (let i = 0; i < infos.length; i++) {
+            const item = instantiate(this.recordItem);
+            this.itemParent.addChild(item);
+            item.getComponent(RecordItem).UpdateItem(infos[i], i);
         }
     }
 }

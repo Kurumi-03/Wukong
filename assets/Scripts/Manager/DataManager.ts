@@ -29,12 +29,12 @@ export class HistoryInfo {
     type: number;//游玩类型 0:直接游玩  1:中奖得到的免费游戏(红色)  2:购买得到的免费游戏(绿色)
 }
 
-export class RecordInfo{
-    gameName:string;//游戏名称
-    totalBet:number;//总下注额
-    totalWin:number;//总赢分
-    get:number;//净盈亏
-    count:number;//总下注次数
+export class RecordInfo {
+    gameName: string;//游戏名称
+    totalBet: number;//总下注额
+    totalWin: number;//总赢分
+    get: number;//净盈亏
+    count: number;//总下注次数
 }
 
 @ccclass('DataManager')
@@ -49,7 +49,7 @@ export class DataManager extends Singleton<DataManager> {
 
     betArray: number[] = [0.4, 0.8, 1.6, 3.2, 6.4, 16, 20, 80];
 
-    baseBuyValue:number = 100;
+    baseBuyValue: number = 100;
 
     countArray: number[] = [10, 20, 30, 40, 50, 60, 70, 80, 90];
 
@@ -206,6 +206,16 @@ export class DataManager extends Singleton<DataManager> {
         { date: "2025/05/09 16:20:26\n16818048747", gameName: "战神赛特", betCount: 2.6, get: 2.0, type: 0 },
     ];
 
+    recordInfos: RecordInfo[] = [
+        {
+            gameName: "战神赛特",
+            totalBet: 10100.23,
+            totalWin: 9501.33,
+            get: 123,
+            count: 10,
+        }
+    ]
+
     deskData: number[][][] = [
         [
             [1, 1, 2, 3, 4, 5],
@@ -215,14 +225,14 @@ export class DataManager extends Singleton<DataManager> {
             [3, 5, 1, 4, 6, 8],
         ],
         [
-            [1, 0, 2, 3, 0, 3],
+            [1, 0, 2, 3, 1, 3],
             [3, 7, 2, 9, 3, 5],
             [3, 3, 8, 6, 4, 9],
             [2, 2, 4, 8, 7, 3],
             [3, 5, 5, 4, 6, 8],
         ],
         [
-            [0, 1, 2, 0, 4, 0],
+            [0, 1, 2, 1, 9, 9],
             [2, 0, 2, 9, 0, 6],
             [5, 7, 8, 6, 4, 5],
             [1, 2, 4, 8, 7, 9],
@@ -230,31 +240,31 @@ export class DataManager extends Singleton<DataManager> {
         ]
     ];
 
-    winScore: number[] = [0.8, 3.6];
+    winScore: number[] = [0.8, 3.6, 20.0];//20是测试免费图标使用
     totalWinScore: number = 4.4;
 
     playerScore: number = 1200;
 
-    iconBetTable:number[][] = [
-        [200,500,1000],
-        [50,200,500],
-        [40,100,300],
-        [30,40,240],
-        [20,30,200],
-        [16,24,160],
-        [10,20,100],
-        [8,18,80],
-        [5,15,40],
-        [60,100,2000],
-        [2,9],
-        [10,19],
-        [20,29],
-        [30,500],
+    iconBetTable: number[][] = [
+        [200, 500, 1000],
+        [50, 200, 500],
+        [40, 100, 300],
+        [30, 40, 240],
+        [20, 30, 200],
+        [16, 24, 160],
+        [10, 20, 100],
+        [8, 18, 80],
+        [5, 15, 40],
+        [60, 100, 2000],
+        [2, 9],
+        [10, 19],
+        [20, 29],
+        [30, 500],
     ];
 
-    iconCountTable:number[][] = [
-        [8,9],
-        [10,11],
-        [12,30],
+    iconCountTable: number[][] = [
+        [8, 9],
+        [10, 11],
+        [12, 30],
     ];
 }

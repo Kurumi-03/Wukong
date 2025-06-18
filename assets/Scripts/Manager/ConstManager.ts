@@ -17,10 +17,6 @@ export class ConstManager {
         "stpr_lv4_land",
         "stpr_lv5_land",
         "stpr_scatter_land",
-        "stpr_blue_multiplier_landing",
-        "stpr_green_multiplier_landing",
-        "stpr_purple_multiplier_landing",
-        "stpr_yellow_multiplier_landing",
     ]
 
     static winEffectName: string[] = [
@@ -49,9 +45,16 @@ export class ConstManager {
         "stpr_scatter_anticipate",
     ];
 
+    static multipleDropName: string[] = [
+        "stpr_green_multiplier_landing",
+        "stpr_blue_multiplier_landing",
+        "stpr_purple_multiplier_landing",
+        "stpr_yellow_multiplier_landing",
+    ]
+
     static multipleEfffectName: string[] = [
-        "stpr_blue_multiplier_loop",
         "stpr_green_multiplier_loop",
+        "stpr_blue_multiplier_loop",
         "stpr_purple_multiplier_loop",
         "stpr_yellow_multiplier_loop",
     ]
