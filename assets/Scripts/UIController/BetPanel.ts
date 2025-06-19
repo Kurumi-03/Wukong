@@ -8,8 +8,8 @@ const { ccclass, property } = _decorator;
 
 //存储消除数据
 interface RepeatResult {
-    value: number;
-    count: number;
+    value: number;//序号
+    count: number;//数量
     positions: {
         x: number;
         y: number
@@ -215,7 +215,8 @@ export class BetPanel extends Component {
 
     private FindMatches(): RepeatResult[] {
         const countMap: Map<number, {
-            count: number, positions: {
+            count: number,
+            positions: {
                 x: number;
                 y: number
             }[]
@@ -237,6 +238,7 @@ export class BetPanel extends Component {
         }
 
         const results: RepeatResult[] = [];
+        let temp = { value: 10, count: 0, positions: [] };
         countMap.forEach(
             (data, num) => { // 此处还可以继续添加函数进行判断
                 //查询序号1-9的图标消除
@@ -247,12 +249,16 @@ export class BetPanel extends Component {
                 if (num == 9 && data.count >= 4) {
                     results.push({ value: num, count: data.count, positions: data.positions });
                 }
-                //查询序号11的加倍图标
+                //查询序号11的加倍图标都存储在一个结果里
                 if (num >= 10) {
-                    results.push({ value: num, count: data.count, positions: data.positions });
+                    temp.positions.push(data.positions);
                 }
             }
         );
+        if (temp.positions.length > 0) {
+            temp.count = temp.positions.length;
+            results.push(temp);
+        }
 
         results.forEach(result => {
             console.log(`图标 ${result.value
@@ -262,45 +268,60 @@ export class BetPanel extends Component {
         return results;
     }
 
-
     private Clear(results: RepeatResult[]) {
         if (results.length == 0) {
             console.log("没有可消除");
-            // 在此处进行最终结算
+            // 未找到加倍图标时 在此处进行普通游戏的最终结算
             EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
-            EventManager.Send("UpdatePlayerScore", DataManager.Instance(DataManager).totalWinScore);
+            EventManager.Send("UpdatePlayerScore", this.gameWin);//刷新玩家总得分
+            return;
+        }
+        else if (results.length == 1 && results[0].value == 10 && this.gameWin > 0) {
+            //加倍图标出现且有赢分的情况下才有效果
+            let allMultiple = 0;
+            //此处的position是由于上面temp的positons也填入了positions所有需要二维数组获取
+            for (let i = 0; i < results[0].positions.length; i++) {
+                const node = this.icons[results[0].positions[i][0].x][results[0].positions[i][0].y]?.getComponent(DoubleIcon);
+                allMultiple += node.double;
+                node.getComponent(DoubleIcon).DoubleEffect(() => {
+                    if (i >= results[0].positions.length - 1) {
+                        EventManager.Send("ShowMultiplier", allMultiple);//加倍效果
+                        EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
+                    }
+                })
+            }
+
             return;
         }
         let isClear = false;
         let isOpen = false;
         for (let i = 0; i < results.length; i++) {
             const result = results[i];
+            //序号1-9的普通消除
             if (result.value >= 0 && result.value <= 8) {
-                for (let i = 0; i < result.positions.length; i++) {
-                    //序号1-9的普通消除
-                    const index: number = this.grid[result.positions[i].x][result.positions[i].y];
-                    let temp: Node = this.icons[result.positions[i].x][result.positions[i].y];
-                    this.grid[result.positions[i].x][result.positions[i].y] = -1;
-                    this.icons[result.positions[i].x][result.positions[i].y] = null;
+                for (let j = 0; j < result.positions.length; j++) {
+                    const index: number = this.grid[result.positions[j].x][result.positions[j].y];
+                    let temp: Node = this.icons[result.positions[j].x][result.positions[j].y];
+                    this.grid[result.positions[j].x][result.positions[j].y] = -1;
+                    this.icons[result.positions[j].x][result.positions[j].y] = null;
                     temp.getComponent(Icon)?.ClearEffect(index, () => {
                         // 此处是消除效果只执行一次
                         if (isClear == false) {
                             isClear = true;
-                            
                             this.Drop();
                             let score = DataManager.Instance(DataManager).winScore[this.gameCount];
                             this.gameWin += score
                             EventManager.Send("AddWinItem", result.value, result.count, score);
                             EventManager.Send("UpdateWinScore", this.gameWin);
-                            EventManager.Send("ShowWinScore", score);
+                            EventManager.Send("ShowWinScore", this.gameWin);
                         }
                     });
                 }
             }
             //免费游戏
             if (result.value == 9) {
-                for (let i = 0; i < result.positions.length; i++) {
-                    let temp: Node = this.icons[result.positions[i].x][result.positions[i].y];
+                for (let j = 0; j < result.positions.length; j++) {
+                    let temp: Node = this.icons[result.positions[j].x][result.positions[j].y];
                     temp.getComponent(Icon)?.FreeEffect(() => {
                         if (isOpen == false) {
                             isOpen = true;
@@ -309,20 +330,12 @@ export class BetPanel extends Component {
                             this.gameWin += score;
                             EventManager.Send("AddWinItem", result.value, result.count, score);
                             EventManager.Send("UpdateWinScore", this.gameWin);
-                            EventManager.Send("ShowWinScore", score);
+                            EventManager.Send("ShowWinScore", this.gameWin);
                         }
                     });
                 }
             }
-            //加倍图标出现且有赢分的情况下才有效果
-            if (result.value >= 10 && this.gameWin > 0) {
-                for (let i = 0; i < result.positions.length; i++) {
-                    let temp: Node = this.icons[result.positions[i].x][result.positions[i].y];
-                    temp.getComponent(DoubleIcon)?.DoubleEffect(result.value, () => {
 
-                    });
-                }
-            }
         }
         // console.log(this.grid);
     }

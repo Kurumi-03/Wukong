@@ -1,6 +1,7 @@
-import { _decorator, Component, Label, Node, sp, Sprite } from 'cc';
+import { _decorator, Component, instantiate, Label, Node, Prefab, sp, Sprite } from 'cc';
 import { ConstManager } from '../Manager/ConstManager';
 import { ResourcesManager } from '../Manager/ResourcesManager';
+import { EventManager } from '../Manager/EventManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('DoubleIcon')
@@ -14,11 +15,16 @@ export class DoubleIcon extends Component {
     @property(Label)
     num: Label | null = null;
 
+    @property(sp.Skeleton)
+    startEffect: sp.Skeleton | null = null;
+
     doubleIndex: number = 0// 0为绿色 <10
+    double: number = 0;//记录倍率
 
     //加倍圖標的显示
     DoubleShow(index: number) {
         const data = index - 10;//得到倍率
+        this.double = data;
         if (data < 10) {
             this.doubleIndex = 0;
         }
@@ -33,9 +39,18 @@ export class DoubleIcon extends Component {
         }
         this.num.string = "*" + data;
         this.img.spriteFrame = ResourcesManager.Instance(ResourcesManager).iconArray[10 + this.doubleIndex];
+        //加倍图标是有出场效果的
+        this.startEffect.node.active = true;
+        EventManager.Send("")
+        this.startEffect.setAnimation(0, ConstManager.startDoubleEffectName[this.doubleIndex], false);
+        this.startEffect.setCompleteListener(()=>{
+            console.log("动画执行完毕");
+            this.startEffect.node.active = false;
+        });
+
     }
 
-    DoubleDrop(call){
+    DoubleDrop(call) {
         this.img.node.active = false;
         this.effect.setAnimation(0, ConstManager.multipleDropName[this.doubleIndex], false);
         this.effect.setCompleteListener(() => {
@@ -44,7 +59,7 @@ export class DoubleIcon extends Component {
     }
 
     //加倍的效果
-    DoubleEffect(index: number, call) {
+    DoubleEffect(call) {
         this.num.node.active = false;
         this.effect.setAnimation(0, ConstManager.multipleEfffectName[this.doubleIndex], false);
         this.effect.setCompleteListener(() => {

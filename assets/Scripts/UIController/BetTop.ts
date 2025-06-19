@@ -12,6 +12,7 @@ import {
 import { ResourcesManager } from '../Manager/ResourcesManager';
 import { TextEffect } from '../Effect/TextEffect';
 import { EventManager } from '../Manager/EventManager';
+import { DataManager } from '../Manager/DataManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('BetTop')
@@ -101,7 +102,10 @@ export class BetTop extends Component {
             scale: new Vec3(1.2, 1.2, 1.2)
         }).call(() => {
             let score = this.lastScore * multiplier;
-            this.scoreLabel.node.getComponent(TextEffect).Roll(this.lastScore, score, this.scoreChangeTime);
+            this.scoreLabel.node.getComponent(TextEffect).Roll(this.lastScore, score, this.scoreChangeTime,()=>{
+                EventManager.Send("UpdateWinScore", score);
+                EventManager.Send("UpdatePlayerScore", score);
+            });
         }).to(0.2, {
             scale: new Vec3(1, 1, 1)
         }).start();

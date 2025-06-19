@@ -7,6 +7,8 @@ import { WinHistory } from '../UIController/WinHistory';
 import { BetTop } from '../UIController/BetTop';
 import { BroarCast } from '../UIController/BroarCast';
 import { EventManager } from './EventManager';
+import { FreeResult } from '../UIController/FreeResult';
+import { BigWin } from '../UIController/BigWin';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
@@ -30,6 +32,12 @@ export class GameManager extends Singleton<GameManager> {
     @property(JRPanel)
     jrPanel: JRPanel | null = null;
 
+    @property(FreeResult)
+    freeResult: FreeResult | null = null;
+
+    @property(BigWin)
+    bigWin:BigWin|null = null;
+
     // 测试按钮
     Debug() {
         // let count = 0
@@ -41,11 +49,12 @@ export class GameManager extends Singleton<GameManager> {
         // this.jrPanel.ChangeJRValue();
         // EventManager.Send("UpdateWinScore", 21425.45);
         // EventManager.Send("Action");
-        tween(this).call(()=>{
-            EventManager.Send("ShowWinScore",3.6);
-        }).delay(1.5).call(()=>{
-            EventManager.Send("ShowMultiplier",2);
-        }).start();
-        
+        // tween(this).call(() => {
+        //     EventManager.Send("ShowWinScore", 3.6);
+        // }).delay(1.5).call(() => {
+        //     EventManager.Send("ShowMultiplier", 2);
+        // }).start();
+        // this.freeResult.ShowResult(23.55);
+        this.bigWin.ShowPanel(31.5,0);
     }
 }

@@ -6,7 +6,7 @@ export class ConstManager {
     static initPanelCount: number = 9;//初始能够显示的图标种类数
 
     //图标动画名
-    static dropEffectName: string[] = [
+    static iconDropEffectName: string[] = [
         "stpr_hv1_land",
         "stpr_hv2_landing",
         "stpr_hv3_landing",
@@ -19,7 +19,7 @@ export class ConstManager {
         "stpr_scatter_land",
     ]
 
-    static winEffectName: string[] = [
+    static iconWinEffectName: string[] = [
         "stpr_hv1_win",
         "stpr_hv2_win",
         "stpr_hv3_loop",
@@ -32,7 +32,7 @@ export class ConstManager {
         "stpr_scatter_win",
     ];
 
-    static outEffectName: string[] = [
+    static iconOutEffectName: string[] = [
         "stpr_hv1_out",
         "stpr_hv2_out",
         "stpr_hv3_out",
@@ -57,6 +57,34 @@ export class ConstManager {
         "stpr_blue_multiplier_loop",
         "stpr_purple_multiplier_loop",
         "stpr_yellow_multiplier_loop",
+    ]
+
+    static startDoubleEffectName:string[] = [
+        "gool_summon_effect_1",
+        "gool_summon_effect_2",
+        "gool_summon_effect_3",
+        "gool_summon_effect_4",
+    ]
+
+    static winEffectInName:string[] =[
+        "stpr_bigwin_mega_in",
+        "stpr_bigwin_nice_in",
+        "stpr_bigwin_sensational_in",
+        "stpr_bigwin_superb_in",
+    ]
+
+    static winEffectLoopName:string[] = [
+        "stpr_bigwin_mega_loop",
+        "stpr_bigwin_nice_loop",
+        "stpr_bigwin_sensational_loop",
+        "stpr_bigwin_superb_loop",
+    ]
+
+    static winEffectOutName:string[] = [
+        "stpr_bigwin_mega_out",
+        "stpr_bigwin_nice_out",
+        "stpr_bigwin_sensational_out",
+        "stpr_bigwin_superb_out",
     ]
 }
 

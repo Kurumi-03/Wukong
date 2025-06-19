@@ -16,7 +16,7 @@ export class Icon extends Component {
     // 图标下落后   先向下一段距离再向上回到原来位置  此方法为所有图标都具有
     DropEffect(index: number, call) {
         this.currentIndex = index;
-        this.effect.setAnimation(0, ConstManager.dropEffectName[index], false);
+        this.effect.setAnimation(0, ConstManager.iconDropEffectName[index], false);
         this.effect.setCompleteListener((entry) => {
             call();
         });
@@ -27,10 +27,10 @@ export class Icon extends Component {
         let fram = instantiate(this.clearEffect);
         this.node.addChild(fram);
 
-        this.effect.setAnimation(0, ConstManager.winEffectName[index], false);
+        this.effect.setAnimation(0, ConstManager.iconWinEffectName[index], false);
         this.effect.setCompleteListener((entry) => {
             fram.getComponent(ClearEffect).DestoryEffect();
-            this.effect.setAnimation(0, ConstManager.outEffectName[index], false);
+            this.effect.setAnimation(0, ConstManager.iconOutEffectName[index], false);
             this.effect.setCompleteListener(() => {
                 call();
                 this.node.destroy();
@@ -40,9 +40,9 @@ export class Icon extends Component {
 
     //免费游戏的消除效果
     FreeEffect(call) {
-        this.effect.setAnimation(0, ConstManager.winEffectName[9], false);
+        this.effect.setAnimation(0, ConstManager.iconWinEffectName[9], false);
         this.effect.setCompleteListener(() => {
-            this.effect.setAnimation(0, ConstManager.outEffectName[9], true);
+            this.effect.setAnimation(0, ConstManager.iconOutEffectName[9], true);
             call();//回调
         })
     }
