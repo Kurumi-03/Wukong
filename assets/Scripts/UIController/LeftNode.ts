@@ -1,7 +1,6 @@
 import {
     _decorator,
     Button,
-    CCInteger,
     Component,
     Label,
     Node
@@ -32,22 +31,29 @@ export class LeftNode extends Component {
 
     protected onLoad(): void {
         EventManager.Register("ChangeBuyValue", this.ChangeBuyValue.bind(this));
+        EventManager.Register("ShowNode", this.ShowNode.bind(this));
+        EventManager.Register("ChangeFreeNum", this.ChangeFreeNum.bind(this));
+        EventManager.Register("ChangeFreeWild", this.ChangeFreeWild.bind(this));
     }
 
     protected start(): void {
-        this.ShowBuyBtn();
+        this.ShowNode(0);
         this.ChangeBuyValue(DataManager.Instance(DataManager).betArray[0]);
         this.block.active = false;
     }
 
-    ShowBuyBtn() {
-        this.buyBtn.active = true;
-        this.freeCount.active = false;
-    }
-
-    ShowFreeCount() {
-        this.buyBtn.active = false;
-        this.freeCount.active = true;
+    //0为显示buyBtn   1为显示free count
+    ShowNode(index: number) {
+        if (index == 0) {
+            this.buyBtn.active = true;
+            this.freeCount.active = false;
+        }
+        else if (index == 1) {
+            this.buyBtn.active = false;
+            this.freeCount.active = true;
+            this.ChangeFreeNum();
+            this.ChangeFreeWild(0);//每次打开页面 初始为0
+        }
     }
 
     ChangeBuyValue(value: number) {
@@ -56,8 +62,8 @@ export class LeftNode extends Component {
         ).toString();
     }
 
-    ChangeFreeNum(value: number) {
-        this.freeNum.string = value.toString();
+    ChangeFreeNum() {
+        this.freeNum.string = DataManager.Instance(DataManager).freeCount.toString();
     }
 
     ChangeFreeWild(value: number) {
@@ -71,5 +77,8 @@ export class LeftNode extends Component {
 
     protected onDestroy(): void {
         EventManager.UnRegister("ChangeBuyValue", this.ChangeBuyValue.bind(this));
+        EventManager.UnRegister("ShowNode", this.ShowNode.bind(this));
+        EventManager.UnRegister("ChangeFreeNum", this.ChangeFreeNum.bind(this));
+        EventManager.UnRegister("ChangeFreeWild", this.ChangeFreeWild.bind(this));
     }
 }

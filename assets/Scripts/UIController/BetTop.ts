@@ -42,7 +42,6 @@ export class BetTop extends Component {
     private spriteArray = null;
 
     private lastScore: number = 0;
-    private lastMultiplier: number = 0;
 
     protected onLoad(): void {
         EventManager.Register("ShowLoopText", this.ShowLoopText.bind(this));
@@ -83,16 +82,16 @@ export class BetTop extends Component {
         }).start();
     }
 
-    ShowWinScore(score: number,call = null) {
+    ShowWinScore(score: number, call = null) {
         this.winScore.active = true;
         this.loopText.node.active = false;
         this.multiplierLabel.node.active = false;
         // tween(this.loopText.getComponent(UIOpacity)).stop();
-        this.scoreLabel.node.getComponent(TextEffect).Roll(this.lastScore, score, this.scoreChangeTime,call);
+        this.scoreLabel.node.getComponent(TextEffect).Roll(0, score, this.scoreChangeTime, call);
         this.lastScore = score;
     }
 
-    ShowMultiplier(multiplier: number) {
+    ShowMultiplier(multiplier: number,call) {
         this.multiplierLabel.node.active = true;
         this.multiplierLabel.string = "*" + multiplier;
         //此处需要动画效果
@@ -102,9 +101,8 @@ export class BetTop extends Component {
             scale: new Vec3(1.2, 1.2, 1.2)
         }).call(() => {
             let score = this.lastScore * multiplier;
-            this.scoreLabel.node.getComponent(TextEffect).Roll(this.lastScore, score, this.scoreChangeTime,()=>{
-                EventManager.Send("UpdateWinScore", score);
-                EventManager.Send("UpdatePlayerScore", score);
+            this.scoreLabel.node.getComponent(TextEffect).Roll(this.lastScore, score, this.scoreChangeTime, () => {
+                call();
             });
         }).to(0.2, {
             scale: new Vec3(1, 1, 1)

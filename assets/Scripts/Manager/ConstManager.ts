@@ -5,6 +5,9 @@ const { ccclass, property } = _decorator;
 export class ConstManager {
     static initPanelCount: number = 9;//初始能够显示的图标种类数
 
+    static simpleDropWaitTime: number = 0.07;//普通下落时间
+    static fastDropWaitTime: number = 0;
+
     //图标动画名
     static iconDropEffectName: string[] = [
         "stpr_hv1_land",
@@ -59,32 +62,38 @@ export class ConstManager {
         "stpr_yellow_multiplier_loop",
     ]
 
-    static startDoubleEffectName:string[] = [
+    static startDoubleEffectName: string[] = [
         "gool_summon_effect_1",
         "gool_summon_effect_2",
         "gool_summon_effect_3",
         "gool_summon_effect_4",
     ]
 
-    static winEffectInName:string[] =[
+    static winEffectInName: string[] = [
         "stpr_bigwin_mega_in",
         "stpr_bigwin_nice_in",
         "stpr_bigwin_sensational_in",
         "stpr_bigwin_superb_in",
     ]
 
-    static winEffectLoopName:string[] = [
+    static winEffectLoopName: string[] = [
         "stpr_bigwin_mega_loop",
         "stpr_bigwin_nice_loop",
         "stpr_bigwin_sensational_loop",
         "stpr_bigwin_superb_loop",
     ]
 
-    static winEffectOutName:string[] = [
+    static winEffectOutName: string[] = [
         "stpr_bigwin_mega_out",
         "stpr_bigwin_nice_out",
         "stpr_bigwin_sensational_out",
         "stpr_bigwin_superb_out",
+    ]
+
+    static bannerName: string[] = [
+        "stpr_banner_in",
+        "stpr_banner_loop",
+        "stpr_banner_out",
     ]
 }
 

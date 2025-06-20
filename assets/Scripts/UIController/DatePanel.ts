@@ -1,4 +1,4 @@
-import { _decorator, Component, EventTouch, find, Label, Node, SpriteFrame } from 'cc';
+import { _decorator, Component, EventTouch, find, Label, Node, SpriteFrame, utils } from 'cc';
 import { DataManager } from '../Manager/DataManager';
 import { Utils } from '../Use/Utils';
 const { ccclass, property } = _decorator;
@@ -49,7 +49,7 @@ export class DatePanel extends Component {
     UpdateDayLabel() {
         const month = this.currentDate.getMonth() + 1;
         const day = this.currentDate.getDate();
-        this.dayLabel.string = (month < 10 ? "0" + month.toString() : month.toString()) + "/" + (day < 10 ? "0" + day.toString() : day.toString());
+        this.dayLabel.string = Utils.NumberZero(month) + "/" + Utils.NumberZero(day);
         this.UpdateFindData();
     }
 
@@ -90,7 +90,7 @@ export class DatePanel extends Component {
     }
 
     UpdateFindData() {
-        this.findData = this.dayLabel.string + " " + this.currentDate.getHours() + ":" + (this.currentDate.getMinutes() < 10 ? "0" + this.currentDate.getMinutes() : this.currentDate.getMinutes());
+        this.findData = this.dayLabel.string + " " + Utils.NumberZero(this.currentDate.getHours()) + ":" + Utils.NumberZero(this.currentDate.getMinutes());
     }
 }
 

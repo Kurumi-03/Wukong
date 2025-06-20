@@ -40,8 +40,8 @@ export class DoubleIcon extends Component {
         this.num.string = "*" + data;
         this.img.spriteFrame = ResourcesManager.Instance(ResourcesManager).iconArray[10 + this.doubleIndex];
         //加倍图标是有出场效果的
+        EventManager.Send("SummonAction");
         this.startEffect.node.active = true;
-        EventManager.Send("")
         this.startEffect.setAnimation(0, ConstManager.startDoubleEffectName[this.doubleIndex], false);
         this.startEffect.setCompleteListener(()=>{
             console.log("动画执行完毕");

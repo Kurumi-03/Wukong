@@ -8,7 +8,7 @@ export class Charactor extends Component {
     charactorAc: sp.Skeleton | null = null;
 
     protected onLoad(): void {
-        EventManager.Register("Action", this.Action.bind(this));
+        EventManager.Register("SummonAction", this.Action.bind(this));
     }
 
     Action() {
@@ -23,7 +23,7 @@ export class Charactor extends Component {
     }
 
     protected onDestroy(): void {
-        EventManager.UnRegister("Action", this.Action.bind(this));
+        EventManager.UnRegister("SummonAction", this.Action.bind(this));
     }
 }
 

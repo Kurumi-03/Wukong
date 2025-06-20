@@ -12,6 +12,7 @@ import {
     tween,
     Tween
 } from 'cc';
+import { EventManager } from '../Manager/EventManager';
 const {ccclass, property} = _decorator;
 
 @ccclass('PlayBtn')
@@ -41,6 +42,10 @@ export class PlayBtn extends Component {
     private _currentSpeed : number = 0;
     private isPlay:boolean = false;
     private isShow:boolean  = false;
+
+    protected onLoad(): void {
+        EventManager.Register("PlayBtnEffect",this.PlayBtnEffect.bind(this));
+    }
 
     start() {
         this.startSlowRotate();
@@ -82,5 +87,9 @@ export class PlayBtn extends Component {
 
     EnableBtn(isShow:boolean){
         this.node.getComponentInChildren(Button).interactable = isShow;
+    }
+
+    protected onDestroy(): void {
+        EventManager.UnRegister("PlayBtnEffect",this.PlayBtnEffect.bind(this));
     }
 }

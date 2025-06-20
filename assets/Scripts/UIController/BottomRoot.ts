@@ -40,6 +40,10 @@ export class BottomRoot extends Component {
     }
 
     EnableAllBtn(isShow: boolean) {
+        //在免费游戏模式下不会解除按钮禁用
+        if (DataManager.Instance(DataManager).freeCount > 0) {
+            isShow = false;
+        }
         this.menuBtn.EnableBtn(isShow);
         this.autoBtn.EnableBtn(isShow);
         this.fastBtn.EnableBtn(isShow);

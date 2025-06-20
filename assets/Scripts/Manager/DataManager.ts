@@ -2,6 +2,7 @@ import {
     _decorator,
 } from 'cc';
 import Singleton from '../Use/Singleton';
+import { ConstManager } from './ConstManager';
 const {
     ccclass, property
 } = _decorator;
@@ -42,6 +43,8 @@ export class DataManager extends Singleton<DataManager> {
     protected onLoad(): void {
         DataManager._instance = this;
     }
+
+    dropWaitTime: number = ConstManager.simpleDropWaitTime;
 
     date: string = "2025/06/17/12/01";
 
@@ -217,31 +220,54 @@ export class DataManager extends Singleton<DataManager> {
     ]
 
     deskData: number[][][] = [
+        //测试加倍时的数据
+        // [
+        //     [1, 1, 2, 3, 4, 5],
+        //     [2, 7, 8, 9, 1, 1],
+        //     [1, 3, 4, 6, 7, 9],
+        //     [1, 2, 5, 8, 1, 3],
+        //     [3, 5, 1, 4, 6, 8],
+        // ],
+        // [
+        //     [1, 13, 2, 3, 12, 3],
+        //     [3, 7, 2, 9, 3, 5],
+        //     [3, 3, 8, 6, 4, 9],
+        //     [2, 2, 4, 8, 7, 3],
+        //     [3, 5, 5, 4, 6, 8],
+        // ],
+        // [
+        //     [0, 1, 2, 1, 3, 9],
+        //     [2, 13, 2, 9, 12, 6],
+        //     [5, 7, 8, 6, 4, 5],
+        //     [1, 2, 4, 8, 7, 9],
+        //     [2, 5, 5, 4, 6, 8],
+        // ]
+
         [
-            [1, 1, 2, 3, 4, 5],
-            [2, 7, 8, 9, 1, 1],
+            [1, 0, 2, 3, 4, 5],
+            [2, 7, 1, 9, 1, 1],
             [1, 3, 4, 6, 7, 9],
-            [1, 2, 5, 8, 1, 3],
+            [1, 2, 5, 9, 1, 3],
             [3, 5, 1, 4, 6, 8],
         ],
         [
-            [1, 13, 2, 3, 12, 3],
-            [3, 7, 2, 9, 3, 5],
-            [3, 3, 8, 6, 4, 9],
-            [2, 2, 4, 8, 7, 3],
+            [4, 0, 2, 3, 8, 7],
+            [5, 7, 0, 9, 7, 5],
+            [6, 3, 2, 6, 4, 9],
+            [2, 2, 4, 9, 7, 3],
             [3, 5, 5, 4, 6, 8],
         ],
-        [
-            [0, 1, 2, 1, 3, 9],
-            [2, 13, 2, 9, 12, 6],
-            [5, 7, 8, 6, 4, 5],
-            [1, 2, 4, 8, 7, 9],
-            [2, 5, 5, 4, 6, 8],
-        ]
+
+        // [
+        //     [4, 0, 2, 3, 8, 7],
+        //     [5, 7, 0, 9, 7, 5],
+        //     [6, 3, 2, 6, 4, 9],
+        //     [2, 9, 4, 9, 7, 3],
+        //     [3, 5, 5, 4, 6, 8],
+        // ],
     ];
 
     winScore: number[] = [0.8, 3.6, 20];//20是测试免费图标使用
-    totalWinScore: number = 8.0;
 
     playerScore: number = 1200;
 
@@ -267,4 +293,8 @@ export class DataManager extends Singleton<DataManager> {
         [10, 11],
         [12, 30],
     ];
+
+    allBetMultiple: number = 30;//免费游戏得奖图标倍数
+
+    freeCount: number = 0;//免费游戏次数
 }

@@ -4,6 +4,7 @@ import { DataManager } from '../Manager/DataManager';
 import { ConstManager } from '../Manager/ConstManager';
 import { EventManager } from '../Manager/EventManager';
 import { DoubleIcon } from '../Prefab/DoubleIcon';
+import { GameManager } from '../Manager/GameManager';
 const { ccclass, property } = _decorator;
 
 //存储消除数据
@@ -52,9 +53,6 @@ export class BetPanel extends Component {
     @property(CCFloat)
     dropTime: number = 0;//单个图标从创建位置下落到指定位置的时间
 
-    @property(CCFloat)
-    dropWaitTime: number = 0;//每个图标的等待时间
-
     private createPos: Vec2 = new Vec2();
     private createCall: number = 0;//用以标记图标是否全部创建完成
     private quickDropFlag: boolean = false;//用以标记快速下落次数避免多次点击
@@ -62,8 +60,11 @@ export class BetPanel extends Component {
     private grid: number[][] = [];//用以存储图标id  1-11
     private icons: Node[][] = [];//用以存储新建的图标
 
-    private gameCount: number = 0;//记录游戏轮次
+    private gameCount: number = 0;//记录一局游戏消除次数
     private gameWin: number = 0;//一局游戏总得分
+    private freeWin: number = 0;//免费游戏模式的总得分
+    private freeMultple: number = 0;//免费游戏模式的总倍率
+    private isFree: boolean = false;//是否是免费游戏模式
 
     start() {
         this.Init();
@@ -130,9 +131,9 @@ export class BetPanel extends Component {
                                 this.SpawnNewIcon();
                             }
                         }).start();
-                    }, this.dropWaitTime * y);
+                    }, DataManager.Instance(DataManager).dropWaitTime * y);
                 }
-            }, this.dropWaitTime * x * this.arrayHeight);
+            }, DataManager.Instance(DataManager).dropWaitTime * x * this.arrayHeight);
         }
     }
 
@@ -163,11 +164,10 @@ export class BetPanel extends Component {
                                 //在此处更改grid的值即可
                                 this.grid[this.arrayHeight - 1 - y][x] = DataManager.Instance(DataManager).deskData[this.gameCount][this.arrayHeight - 1 - y][x];
                                 this.CreateIcon(this.arrayHeight - 1 - y, x, clearNum);
-                                // console.log(`行:${this.arrayHeight - 1 - y},列:${x}`);
-                            }, this.dropWaitTime * y);
+                            }, DataManager.Instance(DataManager).dropWaitTime * y);
                         }
                     }
-                }, this.dropWaitTime * all);
+                }, DataManager.Instance(DataManager).dropWaitTime * all);
             }
         }
     }
@@ -271,9 +271,10 @@ export class BetPanel extends Component {
     private Clear(results: RepeatResult[]) {
         if (results.length == 0) {
             console.log("没有可消除");
-            // 未找到加倍图标时 在此处进行普通游戏的最终结算
             EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
+            // 未找到加倍图标时 在此处进行普通游戏的最终结算
             EventManager.Send("UpdatePlayerScore", this.gameWin);//刷新玩家总得分
+            this.FreeGameJudge();
             return;
         }
         else if (results.length == 1 && results[0].value == 10 && this.gameWin > 0) {
@@ -282,11 +283,18 @@ export class BetPanel extends Component {
             //此处的position是由于上面temp的positons也填入了positions所有需要二维数组获取
             for (let i = 0; i < results[0].positions.length; i++) {
                 const node = this.icons[results[0].positions[i][0].x][results[0].positions[i][0].y]?.getComponent(DoubleIcon);
-                allMultiple += node.double;
+                allMultiple += node.double;//单局游戏的总倍数
                 node.getComponent(DoubleIcon).DoubleEffect(() => {
                     if (i >= results[0].positions.length - 1) {
-                        EventManager.Send("ShowMultiplier", allMultiple);//加倍效果
-                        EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
+                        this.freeMultple += allMultiple;
+                        this.gameWin *= this.freeMultple;
+                        EventManager.Send("ChangeFreeWild", this.freeMultple);
+                        EventManager.Send("ShowMultiplier", allMultiple, () => {
+                            EventManager.Send("UpdateWinScore", this.gameWin);
+                            EventManager.Send("UpdatePlayerScore", this.gameWin);
+                            EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
+                            this.FreeGameJudge();
+                        });//加倍效果
                     }
                 })
             }
@@ -308,12 +316,12 @@ export class BetPanel extends Component {
                         // 此处是消除效果只执行一次
                         if (isClear == false) {
                             isClear = true;
-                            this.Drop();
                             let score = DataManager.Instance(DataManager).winScore[this.gameCount];
-                            this.gameWin += score
+                            this.gameWin += score;
                             EventManager.Send("AddWinItem", result.value, result.count, score);
                             EventManager.Send("UpdateWinScore", this.gameWin);
                             EventManager.Send("ShowWinScore", this.gameWin);
+                            this.Drop();
                         }
                     });
                 }
@@ -325,12 +333,12 @@ export class BetPanel extends Component {
                     temp.getComponent(Icon)?.FreeEffect(() => {
                         if (isOpen == false) {
                             isOpen = true;
-                            console.log("免费游戏界面打开");
                             let score = DataManager.Instance(DataManager).winScore[this.gameCount];
                             this.gameWin += score;
                             EventManager.Send("AddWinItem", result.value, result.count, score);
                             EventManager.Send("UpdateWinScore", this.gameWin);
                             EventManager.Send("ShowWinScore", this.gameWin);
+                            this.scheduleOnce(() => { this.FreeGame() }, 1);
                         }
                     });
                 }
@@ -403,15 +411,38 @@ export class BetPanel extends Component {
         }
     }
 
+    FreeGameJudge() {
+        if(this.isFree == false) return
+        if (DataManager.Instance(DataManager).freeCount > 0) {
+            this.freeWin += this.gameWin;
+            this.OnClickCreate();
+            GameManager.Instance(GameManager).bigWin.ShowPanel(this.gameWin);
+        }
+        else if (DataManager.Instance(DataManager).freeCount == 0) {
+            this.freeWin += this.gameWin;
+            GameManager.Instance(GameManager).freeResult.ShowResult(this.freeWin,this.gameWin);//免费游戏结算界面
+            EventManager.Send("ChangeBg", 0);
+            EventManager.Send("ShowNode", 0);
+            this.isFree = false;
+        }
+    }
+
     //主要操作函数
     OnClickCreate() {
+        EventManager.Send("PlayBtnEffect");
         EventManager.Send("EnableAllBtn", false);//开始时禁用所有按钮
         EventManager.Send("UpdateWinScore", 0);//初始时将得分置为0
         EventManager.Send("ClearWinItem");//初始时需要清空记录
         EventManager.Send("ShowLoopText");//初始展示广播
+        EventManager.Send("UpdatePlayerScore", 0);//刷新玩家得分数值
         this.gameCount = 0;//需要将计数恢复原始值
         this.gameWin = 0;
         this.CreateBefore();
+        //免费游戏进入时就检测
+        if (this.isFree) {
+            DataManager.Instance(DataManager).freeCount--;
+            EventManager.Send("ChangeFreeNum");
+        }
     }
 
     private OnClickClear() {
@@ -427,6 +458,21 @@ export class BetPanel extends Component {
         }
     }
 
+    //免费游戏
+    FreeGame() {
+        //转场特效
+        EventManager.Send("ChangeBg", 1);//背景切换
+        EventManager.Send("ShowNode", 1);//计数面板
+        this.isFree = true;
+        this.freeWin = 0;
+        this.OnClickCreate();
+    }
+
+    //购买免费游戏
+    BuyFreeGame() {
+        //先下落一个free面板数据再进入免费游戏
+        this.OnClickCreate();
+    }
 }
 
 

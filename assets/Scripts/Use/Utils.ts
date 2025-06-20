@@ -21,4 +21,9 @@ export class Utils {
         array[1] = parseInt(s[1]) - 1;//月份需要单独处理
         return array;
     }
+
+    //将小于10的数字补齐为两位显示为字符串
+    static NumberZero(num: number): string {
+        return num < 10 ? "0" + num.toString() : num.toString();
+    }
 }
