@@ -1,4 +1,5 @@
 import { _decorator, Component, Node } from 'cc';
+import { DataManager } from '../Manager/DataManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('Menus')
@@ -35,7 +36,10 @@ export class Menus extends Component {
     }
 
     OpenAutoBetMenu() {
-        this.autoBetMenu.active = true;
+        //不是自动模式时此功能才能使用
+        if(DataManager.Instance(DataManager).autoCount == 0){
+            this.autoBetMenu.active = true;
+        }
     }
 
     CloseAutoBetMenu() {

@@ -13,38 +13,40 @@ import {
     Tween
 } from 'cc';
 import { EventManager } from '../Manager/EventManager';
-const {ccclass, property} = _decorator;
+import { DataManager } from '../Manager/DataManager';
+const { ccclass, property } = _decorator;
 
 @ccclass('PlayBtn')
 export class PlayBtn extends Component {
     @property(Label)
-    description : Label | null = null;
+    description: Label | null = null;
 
     @property(Sprite)
-    arrow : Sprite | null = null;
+    arrow: Sprite | null = null;
 
     @property(Label)
-    num : Label | null = null;
+    num: Label | null = null;
 
     @property(sp.Skeleton)
-    playEffect : sp.Skeleton = null;
+    playEffect: sp.Skeleton = null;
 
     // 默认慢速旋转速度（度/秒）
-    @property(CCInteger)slowSpeed : number = 30;
+    @property(CCInteger) slowSpeed: number = 30;
 
     // 加速旋转速度（度/秒）
-    @property(CCInteger)fastSpeed : number = 180;
+    @property(CCInteger) fastSpeed: number = 180;
 
     // 加速持续时间（秒）
-    @property(CCFloat)boostDuration : number = 1.5;
+    @property(CCFloat) boostDuration: number = 1.5;
 
-    private _rotateTween : Tween < Node > = null;
-    private _currentSpeed : number = 0;
-    private isPlay:boolean = false;
-    private isShow:boolean  = false;
+    private _rotateTween: Tween<Node> = null;
+    private _currentSpeed: number = 0;
+    private isPlay: boolean = false;
+    private isShow: boolean = false;
 
     protected onLoad(): void {
-        EventManager.Register("PlayBtnEffect",this.PlayBtnEffect.bind(this));
+        EventManager.Register("PlayBtnEffect", this.PlayBtnEffect.bind(this));
+        EventManager.Register("PlayBtnAutoMode", this.AutoMode.bind(this));
     }
 
     start() {
@@ -62,9 +64,9 @@ export class PlayBtn extends Component {
 
     // 触发加速旋转
     PlayBtnEffect() { // 停止当前旋转
-        if(this.isPlay) return;
+        if (this.isPlay) return;
         this.isPlay = true;
-        this.playEffect.setAnimation(0,"clickVFX",false);
+        this.playEffect.setAnimation(0, "clickVFX", false);
         if (this._rotateTween) {
             this._rotateTween.stop();
         }
@@ -79,17 +81,18 @@ export class PlayBtn extends Component {
         }).start();
     }
 
-    AutoMode(isOpen : boolean, data : number = 0) {
+    AutoMode(isOpen: boolean) {
         this.description.node.active = !isOpen;
         this.num.node.active = isOpen;
-        this.num.string = data.toString();
+        this.num.string = DataManager.Instance(DataManager).autoCount.toString();
     }
 
-    EnableBtn(isShow:boolean){
+    EnableBtn(isShow: boolean) {
         this.node.getComponentInChildren(Button).interactable = isShow;
     }
 
     protected onDestroy(): void {
-        EventManager.UnRegister("PlayBtnEffect",this.PlayBtnEffect.bind(this));
+        EventManager.UnRegister("PlayBtnEffect", this.PlayBtnEffect.bind(this));
+        EventManager.UnRegister("PlayBtnAutoMode", this.AutoMode.bind(this));
     }
 }

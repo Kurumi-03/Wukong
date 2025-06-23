@@ -65,6 +65,12 @@ export class BetPanel extends Component {
     private freeWin: number = 0;//免费游戏模式的总得分
     private freeMultple: number = 0;//免费游戏模式的总倍率
     private isFree: boolean = false;//是否是免费游戏模式
+    private isAuto: boolean = false;//是否是自动游戏模式
+
+    protected onLoad(): void {
+        EventManager.Register("AutoPlay", this.AutoPlay.bind(this));
+    }
+
 
     start() {
         this.Init();
@@ -271,10 +277,8 @@ export class BetPanel extends Component {
     private Clear(results: RepeatResult[]) {
         if (results.length == 0) {
             console.log("没有可消除");
-            EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
             // 未找到加倍图标时 在此处进行普通游戏的最终结算
-            EventManager.Send("UpdatePlayerScore", this.gameWin);//刷新玩家总得分
-            this.FreeGameJudge();
+            this.AutoJudge();
             return;
         }
         else if (results.length == 1 && results[0].value == 10 && this.gameWin > 0) {
@@ -291,14 +295,11 @@ export class BetPanel extends Component {
                         EventManager.Send("ChangeFreeWild", this.freeMultple);
                         EventManager.Send("ShowMultiplier", allMultiple, () => {
                             EventManager.Send("UpdateWinScore", this.gameWin);
-                            EventManager.Send("UpdatePlayerScore", this.gameWin);
-                            EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
-                            this.FreeGameJudge();
+                            this.AutoJudge();
                         });//加倍效果
                     }
                 })
             }
-
             return;
         }
         let isClear = false;
@@ -411,37 +412,48 @@ export class BetPanel extends Component {
         }
     }
 
-    FreeGameJudge() {
-        if(this.isFree == false) return
+    FreeJudge() {
+        if (this.isFree == false) return;
         if (DataManager.Instance(DataManager).freeCount > 0) {
             this.freeWin += this.gameWin;
             this.OnClickCreate();
             GameManager.Instance(GameManager).bigWin.ShowPanel(this.gameWin);
         }
-        else if (DataManager.Instance(DataManager).freeCount == 0) {
+        else {
             this.freeWin += this.gameWin;
-            GameManager.Instance(GameManager).freeResult.ShowResult(this.freeWin,this.gameWin);//免费游戏结算界面
+            GameManager.Instance(GameManager).freeResult.ShowResult(this.freeWin, this.gameWin, () => {
+                this.isFree = false;
+                EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
+                if (DataManager.Instance(DataManager).isAutoToFree == true) {
+                    this.isAuto = false;
+                    DataManager.Instance(DataManager).autoCount = 0;
+                    EventManager.Send("PlayBtnAutoMode", false);
+                }
+                else {
+                    EventManager.Send("EnableAutoBtn", false);
+                    this.AutoJudge();
+                }
+            });//免费游戏结算界面
             EventManager.Send("ChangeBg", 0);
             EventManager.Send("ShowNode", 0);
-            this.isFree = false;
         }
     }
 
-    //主要操作函数
-    OnClickCreate() {
-        EventManager.Send("PlayBtnEffect");
-        EventManager.Send("EnableAllBtn", false);//开始时禁用所有按钮
-        EventManager.Send("UpdateWinScore", 0);//初始时将得分置为0
-        EventManager.Send("ClearWinItem");//初始时需要清空记录
-        EventManager.Send("ShowLoopText");//初始展示广播
-        EventManager.Send("UpdatePlayerScore", 0);//刷新玩家得分数值
-        this.gameCount = 0;//需要将计数恢复原始值
-        this.gameWin = 0;
-        this.CreateBefore();
-        //免费游戏进入时就检测
-        if (this.isFree) {
-            DataManager.Instance(DataManager).freeCount--;
-            EventManager.Send("ChangeFreeNum");
+    AutoJudge() {
+        EventManager.Send("UpdatePlayerScore", this.gameWin);
+        EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
+        this.FreeJudge();
+        //不在自动模式或是在免费模式下不执行
+        if (this.isAuto == false || this.isFree == true) return;
+        if (DataManager.Instance(DataManager).autoCount > 0) {
+            this.OnClickCreate();
+        }
+        else {
+            this.isAuto = false;
+            EventManager.Send("EnableAutoBtn", true);
+            EventManager.Send("AutoFastMode", false);
+            EventManager.Send("PlayBtnAutoMode", false);
+            EventManager.Send("EnableAllBtn", true);//结算时解禁所有按钮
         }
     }
 
@@ -450,8 +462,36 @@ export class BetPanel extends Component {
         this.Clear(results);
     }
 
+    //主要操作函数
+    OnClickCreate() {
+        if(this.isAuto == false){
+            EventManager.Send("EnableAllBtn", false);//非自动模式下 开始时禁用所有按钮
+        }
+        else{
+            EventManager.Send("EnableAutoBtn", false);
+        }
+        EventManager.Send("PlayBtnEffect");
+        EventManager.Send("UpdateWinScore", 0);//初始时将得分置为0
+        EventManager.Send("ClearWinItem");//初始时需要清空记录
+        EventManager.Send("ShowLoopText");//初始展示广播
+        EventManager.Send("UpdatePlayerScore", 0);//刷新玩家得分数值
+        this.gameCount = 0;//需要将计数恢复原始值
+        this.gameWin = 0;
+        this.CreateBefore();
+        //免费游戏进入时就检测
+        if (this.isFree == true) {
+            DataManager.Instance(DataManager).freeCount--;
+            EventManager.Send("ChangeFreeNum");
+        }
+
+        if (this.isAuto == true && this.isFree == false) {
+            DataManager.Instance(DataManager).autoCount--;
+            EventManager.Send("PlayBtnAutoMode", true);
+        }
+    }
+
+
     OnClickQuickDrop() {
-        console.log("快速下落");
         if (this.quickDropFlag == false) {
             this.quickDropFlag = true;
             this.QuickDrop();
@@ -472,6 +512,16 @@ export class BetPanel extends Component {
     BuyFreeGame() {
         //先下落一个free面板数据再进入免费游戏
         this.OnClickCreate();
+    }
+
+    //自动游戏  
+    AutoPlay() {
+        this.isAuto = true;
+        this.AutoJudge();
+    }
+
+    protected onDestroy(): void {
+        EventManager.UnRegister("AutoPlay", this.AutoPlay.bind(this));
     }
 }
 

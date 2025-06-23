@@ -44,7 +44,9 @@ export class DataManager extends Singleton<DataManager> {
         DataManager._instance = this;
     }
 
-    dropWaitTime: number = ConstManager.simpleDropWaitTime;
+    dropWaitTime: number = ConstManager.simpleDropWaitTime;//图标下落的等待时间  用以制作逐个下落的效果
+
+    isAutoToFree: boolean = false;//在自动游戏时得到免费游戏时是否停止自动游戏
 
     date: string = "2025/06/17/12/01";
 
@@ -54,7 +56,7 @@ export class DataManager extends Singleton<DataManager> {
 
     baseBuyValue: number = 100;
 
-    countArray: number[] = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+    countArray: number[] = [3, 5, 10, 20, 50, 60, 70, 80, 90];
 
     currentDeskIndex: number = 1003;//当前默认进入房间为被自己锁定的房间
 
@@ -243,28 +245,28 @@ export class DataManager extends Singleton<DataManager> {
         //     [2, 5, 5, 4, 6, 8],
         // ]
 
-        [
-            [1, 0, 2, 3, 4, 5],
-            [2, 7, 1, 9, 1, 1],
-            [1, 3, 4, 6, 7, 9],
-            [1, 2, 5, 9, 1, 3],
-            [3, 5, 1, 4, 6, 8],
-        ],
-        [
-            [4, 0, 2, 3, 8, 7],
-            [5, 7, 0, 9, 7, 5],
-            [6, 3, 2, 6, 4, 9],
-            [2, 2, 4, 9, 7, 3],
-            [3, 5, 5, 4, 6, 8],
-        ],
-
+        // [
+        //     [1, 0, 2, 3, 4, 5],
+        //     [2, 7, 1, 9, 1, 1],
+        //     [1, 3, 4, 6, 7, 9],
+        //     [1, 2, 5, 9, 1, 3],
+        //     [3, 5, 1, 4, 6, 8],
+        // ],
         // [
         //     [4, 0, 2, 3, 8, 7],
         //     [5, 7, 0, 9, 7, 5],
         //     [6, 3, 2, 6, 4, 9],
-        //     [2, 9, 4, 9, 7, 3],
+        //     [2, 2, 4, 9, 7, 3],
         //     [3, 5, 5, 4, 6, 8],
         // ],
+
+        [
+            [4, 0, 2, 3, 8, 7],
+            [5, 7, 0, 9, 7, 5],
+            [6, 3, 2, 6, 4, 9],
+            [2, 9, 4, 9, 7, 3],
+            [3, 5, 5, 4, 6, 8],
+        ],
     ];
 
     winScore: number[] = [0.8, 3.6, 20];//20是测试免费图标使用
@@ -294,7 +296,9 @@ export class DataManager extends Singleton<DataManager> {
         [12, 30],
     ];
 
-    allBetMultiple: number = 30;//免费游戏得奖图标倍数
+    allBetMultiple: number = 15;//免费游戏得奖图标倍数
 
-    freeCount: number = 0;//免费游戏次数
+    freeCount: number = 3;//免费游戏次数
+
+    autoCount: number = 0;//自动游戏次数
 }

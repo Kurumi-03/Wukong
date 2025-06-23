@@ -16,10 +16,12 @@ export class BigWin extends Component {
     btn: Button | null = null;
 
     index: number = 0;
+    private call;
 
-    ShowPanel(data: number) {
+    ShowPanel(data: number, _call = null) {
+        this.call = _call;
         this.index = this.Judge(DataManager.Instance(DataManager).allBetMultiple);
-        if(this.index == -1){
+        if (this.index == -1) {
             //小于时不需要显示面板
             return;
         }
@@ -41,7 +43,10 @@ export class BigWin extends Component {
         this.effect.setAnimation(0, ConstManager.winEffectOutName[this.index], false);
         this.btn.interactable = false;
         this.effect.setCompleteListener(() => {
-            this.node.active = false
+            if (this.call) {
+                this.call();
+            }
+            this.node.active = false;
         })
     }
 

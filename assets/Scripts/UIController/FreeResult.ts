@@ -19,9 +19,11 @@ export class FreeResult extends Component {
     allLabel: Node | null = null;
 
     private win: number = 0;
+    private call;
 
-    ShowResult(data: number, _win: number) {
+    ShowResult(data: number, _win: number,_call) {
         this.win = _win;
+        this.call = _call;
         this.node.active = true;
         this.btn.interactable = false;
         this.num.string = "0";
@@ -41,7 +43,8 @@ export class FreeResult extends Component {
         this.btn.interactable = false;
         this.bg.setCompleteListener(() => {
             this.node.active = false;
-            GameManager.Instance(GameManager).bigWin.ShowPanel(this.win);
+            this.call();
+            GameManager.Instance(GameManager).bigWin.ShowPanel(this.win,this.call);
         })
     }
 }
