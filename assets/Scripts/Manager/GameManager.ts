@@ -11,6 +11,8 @@ import { FreeResult } from '../UIController/FreeResult';
 import { BigWin } from '../UIController/BigWin';
 import { BetPanel } from '../UIController/BetPanel';
 import { DataManager } from './DataManager';
+import { AudioManager } from './AudioManager';
+import { ConstManager } from './ConstManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
@@ -42,6 +44,10 @@ export class GameManager extends Singleton<GameManager> {
 
     @property(BetPanel)
     betPanel: BetPanel | null = null;
+
+    protected start(): void {
+        AudioManager.Instance(AudioManager).playBGM(ConstManager.SIMPLE_BGM);
+    }
 
     // 测试按钮
     Debug() {

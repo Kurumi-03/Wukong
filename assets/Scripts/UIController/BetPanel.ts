@@ -413,11 +413,11 @@ export class BetPanel extends Component {
     }
 
     FreeJudge() {
+        GameManager.Instance(GameManager).bigWin.ShowPanel(this.gameWin);//大奖是所有都会触发
         if (this.isFree == false) return;
         if (DataManager.Instance(DataManager).freeCount > 0) {
             this.freeWin += this.gameWin;
             this.OnClickCreate();
-            GameManager.Instance(GameManager).bigWin.ShowPanel(this.gameWin);
         }
         else {
             this.freeWin += this.gameWin;
