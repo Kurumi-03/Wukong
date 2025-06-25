@@ -13,6 +13,8 @@ import { BetPanel } from '../UIController/BetPanel';
 import { DataManager } from './DataManager';
 import { AudioManager } from './AudioManager';
 import { ConstManager } from './ConstManager';
+import { Icon } from '../Prefab/Icon';
+import { DoubleIcon } from '../Prefab/DoubleIcon';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
@@ -45,6 +47,12 @@ export class GameManager extends Singleton<GameManager> {
     @property(BetPanel)
     betPanel: BetPanel | null = null;
 
+    @property(DoubleIcon)
+    icon: DoubleIcon | null = null;
+
+    @property(DoubleIcon)
+    icon2: DoubleIcon | null = null;
+
     protected start(): void {
         AudioManager.Instance(AudioManager).playBGM(ConstManager.SIMPLE_BGM);
     }
@@ -54,21 +62,23 @@ export class GameManager extends Singleton<GameManager> {
         // this.freeResult.ShowResult(23.55);
         // this.bigWin.ShowPanel(31.5, 0);
         // this.betPanel.FreeGame();
-        DataManager.Instance(DataManager).deskData = [
-            [
-                [1, 0, 2, 3, 4, 5],
-                [2, 7, 1, 9, 1, 1],
-                [1, 3, 4, 6, 7, 9],
-                [1, 2, 5, 9, 1, 3],
-                [3, 5, 1, 4, 6, 8],
-            ],
-            [
-                [4, 0, 2, 3, 8, 7],
-                [5, 7, 0, 9, 7, 5],
-                [6, 3, 2, 6, 4, 9],
-                [2, 2, 4, 9, 7, 3],
-                [3, 5, 5, 4, 6, 8],
-            ],
-        ]
+        // DataManager.Instance(DataManager).deskData = [
+        //     [
+        //         [1, 0, 2, 3, 4, 5],
+        //         [2, 7, 1, 9, 1, 1],
+        //         [1, 3, 4, 6, 7, 9],
+        //         [1, 2, 5, 9, 1, 3],
+        //         [3, 5, 1, 4, 6, 8],
+        //     ],
+        //     [
+        //         [4, 0, 2, 3, 8, 7],
+        //         [5, 7, 0, 9, 7, 5],
+        //         [6, 3, 2, 6, 4, 9],
+        //         [2, 2, 4, 9, 7, 3],
+        //         [3, 5, 5, 4, 6, 8],
+        //     ],
+        // ]
+        this.icon.DoubleShow(23);
+        this.icon2.DoubleShow(120);
     }
 }

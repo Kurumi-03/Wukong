@@ -20,9 +20,11 @@ export class DoubleIcon extends Component {
 
     doubleIndex: number = 0// 0为绿色 <10
     double: number = 0;//记录倍率
+    private isFirst = false;//记录是否是初始状态
 
     //加倍圖標的显示
     DoubleShow(index: number) {
+        console.log(index);
         const data = index - 10;//得到倍率
         this.double = data;
         if (data < 10) {
@@ -39,18 +41,20 @@ export class DoubleIcon extends Component {
         }
         this.num.string = "*" + data;
         this.img.spriteFrame = ResourcesManager.Instance(ResourcesManager).iconArray[10 + this.doubleIndex];
-        //加倍图标是有出场效果的
-        EventManager.Send("SummonAction");
-        this.startEffect.node.active = true;
-        this.startEffect.setAnimation(0, ConstManager.startDoubleEffectName[this.doubleIndex], false);
-        this.startEffect.setCompleteListener(()=>{
-            console.log("动画执行完毕");
-            this.startEffect.node.active = false;
-        });
 
     }
 
     DoubleDrop(call) {
+        //加倍图标是有出场效果的  只有最开始时具有
+        if (this.isFirst == false) {
+            this.isFirst = true;
+            EventManager.Send("SummonAction");
+            this.startEffect.node.active = true;
+            this.startEffect.setAnimation(0, ConstManager.startDoubleEffectName[this.doubleIndex], false);
+            this.startEffect.setCompleteListener(() => {
+                this.startEffect.node.active = false;
+            });
+        }
         this.img.node.active = false;
         this.effect.setAnimation(0, ConstManager.multipleDropName[this.doubleIndex], false);
         this.effect.setCompleteListener(() => {

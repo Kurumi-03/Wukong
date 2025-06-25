@@ -360,12 +360,12 @@ export class BetPanel extends Component {
                     this.grid[y][x] = -1;
                     // 下移物体
                     let temp: Node = this.icons[y][x];
+                    let index = this.grid[y + emptyCount][x];
                     tween(temp).by(this.dropTime, {
                         position: new Vec3(0, - emptyCount * this.yOffset)
                     }).call(() => {
-                        temp.getComponent(Icon)?.DropEffect(this.grid[y][x], () => {
-                            // 此处可以有下落完成的回调  
-                        });
+                        temp.getComponent(Icon)?.DropEffect(index, () => { });
+                        temp.getComponent(DoubleIcon)?.DoubleDrop(() => { });
                     }).start();
                     // 移动后更改数据
                     this.icons[y + emptyCount][x] = this.icons[y][x];
@@ -377,7 +377,7 @@ export class BetPanel extends Component {
             console.log("开始下落新的");
             this.gameCount++;
             this.SpawnNewIcon();
-        }, 0.1);
+        }, this.dropTime + 0.05);//此处偏差时间可自调
         console.log(this.grid);
     }
 
@@ -401,7 +401,7 @@ export class BetPanel extends Component {
                 tween(temp).by(this.dropTime / 2, {
                     position: new Vec3(0, -this.quickPosOffset)
                 }).call(() => {
-                    temp.getComponent(Icon)?.DropEffect(this.grid[x][y], () => {
+                    temp.getComponent(Icon).DropEffect(this.grid[x][y], () => {
                         num++;
                         if (num >= this.arrayHeight * this.arrayWidth) {
                             this.OnClickClear();
@@ -464,10 +464,10 @@ export class BetPanel extends Component {
 
     //主要操作函数
     OnClickCreate() {
-        if(this.isAuto == false){
+        if (this.isAuto == false) {
             EventManager.Send("EnableAllBtn", false);//非自动模式下 开始时禁用所有按钮
         }
-        else{
+        else {
             EventManager.Send("EnableAutoBtn", false);
         }
         EventManager.Send("PlayBtnEffect");
