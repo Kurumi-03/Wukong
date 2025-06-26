@@ -317,7 +317,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 39.991769976875645,
+      "width": 39.98895474137931,
       "height": 25.200000000000003
     },
     "_anchorPoint": {
@@ -356,7 +356,7 @@
     "_string": "遊戲",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 30.40625,
+    "_actualFontSize": 31.71875,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 20,
@@ -369,7 +369,7 @@
     "_isBold": false,
     "_isUnderline": false,
     "_underlineHeight": 2,
-    "_cacheMode": 0,
+    "_cacheMode": 1,
     "_enableOutline": false,
     "_outlineColor": {
       "__type__": "cc.Color",
@@ -476,7 +476,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 79.98353995375129,
+      "width": 79.97790948275862,
       "height": 25.200000000000003
     },
     "_anchorPoint": {
@@ -515,7 +515,7 @@
     "_string": "總下注額",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 30.40625,
+    "_actualFontSize": 31.71875,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 20,
@@ -528,7 +528,7 @@
     "_isBold": false,
     "_isUnderline": false,
     "_underlineHeight": 2,
-    "_cacheMode": 0,
+    "_cacheMode": 1,
     "_enableOutline": false,
     "_outlineColor": {
       "__type__": "cc.Color",
@@ -635,7 +635,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 59.98765496531347,
+      "width": 59.98343211206897,
       "height": 25.200000000000003
     },
     "_anchorPoint": {
@@ -674,7 +674,7 @@
     "_string": "總贏分",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 30.40625,
+    "_actualFontSize": 31.71875,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 20,
@@ -687,7 +687,7 @@
     "_isBold": false,
     "_isUnderline": false,
     "_underlineHeight": 2,
-    "_cacheMode": 0,
+    "_cacheMode": 1,
     "_enableOutline": false,
     "_outlineColor": {
       "__type__": "cc.Color",
@@ -794,7 +794,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 59.98765496531347,
+      "width": 59.98343211206897,
       "height": 25.200000000000003
     },
     "_anchorPoint": {
@@ -833,7 +833,7 @@
     "_string": "淨輸贏",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 30.40625,
+    "_actualFontSize": 31.71875,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 20,
@@ -846,7 +846,7 @@
     "_isBold": false,
     "_isUnderline": false,
     "_underlineHeight": 2,
-    "_cacheMode": 0,
+    "_cacheMode": 1,
     "_enableOutline": false,
     "_outlineColor": {
       "__type__": "cc.Color",
@@ -953,7 +953,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 39.991769976875645,
+      "width": 39.98895474137931,
       "height": 25.200000000000003
     },
     "_anchorPoint": {
@@ -992,7 +992,7 @@
     "_string": "筆數",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 30.40625,
+    "_actualFontSize": 31.71875,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 20,
@@ -1005,7 +1005,7 @@
     "_isBold": false,
     "_isUnderline": false,
     "_underlineHeight": 2,
-    "_cacheMode": 0,
+    "_cacheMode": 1,
     "_enableOutline": false,
     "_outlineColor": {
       "__type__": "cc.Color",
@@ -1149,6 +1149,7 @@
       "__id__": 0
     },
     "fileId": "9dC4WFxnZLyJHeLJbLvPuD",
+    "instance": null,
     "targetOverrides": null
   }
 ]
